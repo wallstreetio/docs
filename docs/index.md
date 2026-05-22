@@ -2,11 +2,23 @@
 icon: lucide/rocket
 ---
 
-# Get started
+# General
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+This the documentation for [Wallstreet.io](https://wallstreet.io/platform), a Boutique Strategy Lab. Sign up for a [free trial](https://app.wallstreet.io/register) today! 
 
-## Commands
+This documentation is mostly text, for videos with similar content, see [Micah's Video library](TBD)
+
+
+
+
+## Layout
+
+* Overview 
+* App and Account Bar
+* Charts App 
+* Education App 
+* Community App
+
 
 * [`zensical new`][new] - Create a new project
 * [`zensical serve`][serve] - Start local web server
@@ -16,7 +28,31 @@ For full documentation visit [zensical.org](https://zensical.org/docs/).
   [serve]: https://zensical.org/docs/usage/preview/
   [build]: https://zensical.org/docs/usage/build/
 
-## Examples
+## Apps 
+
+
+### Charts
+
+#### Chart Area 
+
+#### Tool Bar 
+
+##### Strategies 
+
+##### Strategy Builder 
+
+##### Doji Screener 
+
+##### Screener (BETA)
+
+##### Seasonality 
+
+##### Fundamentals
+
+### Education
+
+### Community 
+
 
 ### Admonitions
 
