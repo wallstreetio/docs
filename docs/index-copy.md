@@ -18,7 +18,7 @@ For full documentation visit [zensical.org](https://zensical.org/docs/).
 
 ## Examples
 
-### Admonitions
+### Admonitionss
 
 > Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
 
