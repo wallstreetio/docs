@@ -1,8 +1,10 @@
 # Chart app
 
-Add one picture with all labelled
+![Charts app](../assets/charts-app.png)
 
-## App hierarchy
+Need to add labels
+
+## App components
 * Stock Search
 * Chart Area 
     * Charting Tools

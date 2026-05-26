@@ -1,5 +1,5 @@
 # App and Account Bar
 
-Add picture 
+![App and Account bar](../assets/app-account-bar.png)
 
-The App and Account bar is always visible no matter which app. 
+The App and Account bar and the "Live" icon are always visible and the same no matter which app. 
