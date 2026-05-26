@@ -1,0 +1,1 @@
+Make custom navigation so order for apps is layout, chart, education, community

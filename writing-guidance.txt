@@ -1,0 +1,5 @@
+Only add a guide if multiple steps are involved.
+Don't add guide steps for filling out prompt.
+For guides, don't repeat steps between guides. If you find yourself repeating steps a lot, then add a guide for just that action. 
+Don't use you, use the user. 
+Don't repeat yourself multiple times in different sections. Use "For more see link.", and link to the best section for the information to live. 

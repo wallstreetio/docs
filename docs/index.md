@@ -4,33 +4,14 @@ icon: lucide/rocket
 
 # General
 
-This the documentation for [Wallstreet.io](https://wallstreet.io/platform), a Boutique Strategy Lab. Sign up for a [free trial](https://app.wallstreet.io/register) today! 
+Welcome to the documentation for [Wallstreet.io](https://wallstreet.io/platform), a Boutique Strategy Lab. Sign up for a [free trial](https://app.wallstreet.io/register) today! 
 
-This documentation is mostly text, for videos with similar content, see [Micah's Video library](TBD)
+For videos with similar content, see [Micah's Video library](TBD)
 
+Wallstreet.io has everything a trader could need to trade wisely: 
 
+* powerful [charting tools](./charts-app/chart-app-overview.md) crafting for the novice and the expert 
+* welcoming [community]() to bounce ideas off of and view live streams with 
+* carefully engineered [education products]() to fill in knowledge gaps
 
-## Apps 
-
-
-### Charts
-
-#### Chart Area 
-
-#### Tool Bar 
-
-##### Strategies 
-
-##### Strategy Builder 
-
-##### Doji Screener 
-
-##### Screener (BETA)
-
-##### Seasonality 
-
-##### Fundamentals
-
-### Education
-
-### Community 
+If you are new to Wallstreet.io, checkout the [layout section](./layout/1-overview.md) first.
