@@ -1,4 +1,4 @@
-# Chart app
+# Charts app
 
 ![Charts app](../assets/charts-app.png){ loading=lazy }
 
