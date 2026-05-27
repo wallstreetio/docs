@@ -1,6 +1,6 @@
 # Chart app
 
-![Charts app](../assets/charts-app.png)
+![Charts app](../assets/charts-app.png){ loading=lazy }
 
 Need to add labels
 
