@@ -1,5 +1,5 @@
 # Overview
-The chart app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when its time to trade.
+----- Start here --- The Community app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when its time to trade.
 
 ## Components
 The chart is made up of a bunch of components. They are like bins, each one holding similar things. 

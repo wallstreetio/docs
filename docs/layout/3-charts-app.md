@@ -20,5 +20,9 @@ Need to add labels
         * [Strategies](../charts-app/toolbar/5-strategies.md)
         * [Strategy Builder](../charts-app/toolbar/6-strategy-builder.md)
 * Sidebar 
-    * Sidebar tool selector
+    * Sidebar widget selector
     * Sidebar display area
+    * All sidebar widgets:
+        * [Watchlist](../charts-app/sidebar/1-watchlist.md)
+        * [Chatroom](../charts-app/sidebar/2-chatroom.md)
+        * [Alerts](../charts-app/sidebar/3-alerts.md) 
