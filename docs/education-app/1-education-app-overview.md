@@ -1,11 +1,9 @@
 # Overview
-The chart app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when its time to trade.
+The Education app has free and paid products to expand the user's knowledge. Each one is carefully engineered to distill an essential aspect of Wallstreet.io's trading strategy. 
 
-## Components
-The chart is made up of a bunch of components. They are like bins, each one holding similar things. 
+## Education widgets
 
-* Chart Area: charting tools and the plot.
-* Toolbar: bespoke tools for discovering and evaluating opportunities often used will chart, but sometimes on their own. 
-* Sidebar: Watchlists, Price Alerts, Chatroom
-
-For more, navigate through the main menu, which is either visible on the left side, or folded up in the top left. 
+* [Getting Started](./2-getting-started.md)
+* [Roadmaps](./3-roadmaps.md)
+* [Wheel Strategy](./4-wheel-strategy.md)
+* [Trade Prodigy](./5-trade-prodigy.md)

@@ -2,8 +2,6 @@
 
 ![Charts app](../assets/charts-app.png){ loading=lazy }
 
-Need to add labels
-
 ## App components
 * Stock Search
 * Chart Area 

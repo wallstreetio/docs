@@ -1,2 +1,8 @@
 Make custom navigation so order for apps is layout, chart, education, community
 Redo screen shots. Add labels.
+Write overviews for education 
+write top line for education app components
+write top line for community app components
+flesh out chart app 
+make pretty 
+investigate folding sections
