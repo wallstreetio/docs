@@ -6,6 +6,10 @@ General
 * Don't repeat yourself multiple times in different sections. Use "For more see link.", and link to the best section for the information to live. 
 * When referring to specific components in guides, use text from the app, quoted it, and write the text as it appears in app, eg click on "ALL STOCKS" or ensure on "Current Stock" is selected.
 
+
+
 Helpful files 
 how-to-markdown.md 
 how-to-markdown-2.md
+
+current color - 

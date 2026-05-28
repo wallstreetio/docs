@@ -3,7 +3,7 @@ The Education app has free and paid products to expand the user's knowledge. Eac
 
 ## Education widgets
 
-* [Getting Started](./2-getting-started.md)
-* [Roadmaps](./3-roadmaps.md)
-* [Wheel Strategy](./4-wheel-strategy.md)
-* [Trade Prodigy](./5-trade-prodigy.md)
+* [Getting Started](./widgets/2-getting-started.md)
+* [Roadmaps](./widgets/3-roadmaps.md)
+* [Wheel Strategy](./widgets/4-wheel-strategy.md)
+* [Trade Prodigy](./widgets/5-trade-prodigy.md)

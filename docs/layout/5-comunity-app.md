@@ -7,6 +7,6 @@
 * Community Area
 
 ## All Community widgets: 
-* [The Wall](../community-app/2-the-wall.md)
-* [Live Streams](../community-app/3-live-streams.md)
-* [Chat Rooms](../community-app/4-chat-rooms.md)
+* [The Wall](../community-app/widgets/2-the-wall.md)
+* [Live Streams](../community-app/widgets/3-live-streams.md)
+* [Chat Rooms](../community-app/widgets/4-chat-rooms.md)

@@ -4,4 +4,8 @@ write top line for education app components
 write top line for community app components
 flesh out chart app 
 make pretty 
+    move next and previous to top
+    fix logo for dark and light - look at current color variable
 investigate folding sections
+put widgets in folders 
+cosider - most common tools section
