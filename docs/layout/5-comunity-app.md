@@ -1,6 +1,6 @@
 # Community app
 
-![Community app](../assets/community-app.png){ loading=lazy }
+![Community app](../assets/images/community-app.png){ loading=lazy }
 
 ## App components
 * Community Bar
