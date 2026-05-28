@@ -4,8 +4,21 @@ write top line for education app components
 write top line for community app components
 flesh out chart app 
 make pretty 
-    move next and previous to top
+    move next and previous to top - require customizing theme.
     fix logo for dark and light - look at current color variable
 investigate folding sections
-put widgets in folders 
-cosider - most common tools section
+consider - most common tools section
+chat with leslie at noon on Monday
+    show her site layout 
+    emphasize minimalist perspective 
+    walk through a couple of examples of done 
+    ask about faqs
+    show her workflow
+
+Leslie todo 
+setup a github with wallstreet.io email
+message me username so can give her access
+complete watchlists 
+message me the file when done
+try the workflow
+download and install VS code - don't need to setup, just get it so that it opens

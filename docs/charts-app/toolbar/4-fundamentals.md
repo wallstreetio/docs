@@ -2,17 +2,14 @@
 
 ## Overview
 
-Seasonality helps the user explore the seasonality experienced by stocks or sectors.
+The Fundamentals tool helps the user explore a companies fundamentals across multiple axes. 
 
-## Guides 
-
-### View detailed seasonality
-
-1. In Filter Area, ensure "Stocks" is selected.
-1. Set filters as desired
-1. Click on a stock in the Data Area.
-1. Details for selected stock will populate on the right side of the Data Area 
-1. To hide detailed seasonality, click "X" in upper right of the Data Area
+* Financials
+* Earnings
+* Valuation
+* Analyst 
+* SEC Risks
+* Profile
 
 ## FAQ 
 

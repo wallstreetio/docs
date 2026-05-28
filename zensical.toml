@@ -45,10 +45,17 @@ site_dir="site"
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+nav = [
+  "index.md",
+  { "Charts app" = [
+    "charts-app/charts-app-overview.md",
+    { "Chart Area" = [
+      "charts-app/chart-area/1-charting-tools.md",
+      "charts-app/chart-area/2-plot.md",
+    ]}
+    
+  ]}
+]
 
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
@@ -84,7 +91,7 @@ variant = "modern"
 # Read more:
 # - https://zensical.org/docs/customization/#extending-the-theme
 #
-#custom_dir = "overrides"
+custom_dir = "overrides"
 
 # With the "favicon" option you can set your own image to use as the icon
 # browsers will use in the browser title bar or tab bar. The path provided
