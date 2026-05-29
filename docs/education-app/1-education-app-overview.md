@@ -1,3 +1,7 @@
+---
+icon: bootstrap/workspace-education
+---
+
 # Overview
 The Education app has free and paid products to expand the user's knowledge. Each one is carefully engineered to distill an essential aspect of Wallstreet.io's trading strategy. 
 

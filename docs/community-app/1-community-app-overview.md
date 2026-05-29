@@ -1,3 +1,7 @@
+---
+icon: bootstrap/workspace-education
+---
+
 # Overview
 The Community app focuses on the human aspect of trading. 
 
