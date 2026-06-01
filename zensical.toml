@@ -341,9 +341,9 @@ toggle.name = "Switch to dark mode"
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
-# Bug where colors don't really work.
-# primary = "custom"
-# accent = "custom"
+# Maybe bug where colors don't really work.
+# primary = "red"
+# accent = "green"
 
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.

@@ -3,10 +3,9 @@ Redo screen shots. Add labels.
 write top line for education app components
 write top line for community app components
 flesh out chart app 
-make pretty 
-    finish adding nice logos to navigation
+make pretty
     move next and previous to top - require customizing theme.
-    fix logo for dark and light - look at current color variable
+    make colors look nicer - remove opacity on nav icons, change current pages in nav to better color
 investigate folding sections
 consider - most common tools section
 
