@@ -1,5 +1,5 @@
 ---
-icon: bootstrap/workspace-education
+icon: bootstrap/workspace-charts
 ---
 
 # Overview
