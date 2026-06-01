@@ -1,4 +1,7 @@
 :root  > * {
   --md-primary-fg-color--dark: #30423D;
   --md-accent-fg-color--dark: #30423D;
+  .navbar-icon-color {
+  color: #6FCF97;
+  }
 }

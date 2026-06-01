@@ -1,6 +1,6 @@
 # Charts app
 
-![Charts app](../assets/images/charts-app.png){ loading=lazy }
+![Charts app](../assets/screenshots/charts-app.png){ loading=lazy }
 
 ## App components
 * Stock Search

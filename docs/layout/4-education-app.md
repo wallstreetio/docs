@@ -1,6 +1,6 @@
 # Education app
 
-![Education app](../assets/images/education-app.png){ loading=lazy }
+![Education app](../assets/screenshots/education-app.png){ loading=lazy }
 
 ## App components
 * Education Bar 
