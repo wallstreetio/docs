@@ -20,6 +20,7 @@ Example files:
 2-screener.md 
 3-seasonality.md
 4-fundamentals.md
+charts-app-overview.md
 
 Useful links: 
 Live Site: https://wallstreetio.github.io/docs/

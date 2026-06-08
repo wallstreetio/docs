@@ -1,8 +1,4 @@
-Make custom navigation so order for apps is layout, chart, education, community
 Redo screen shots. Add labels.
-write top line for education app components
-write top line for community app components
-flesh out chart app 
 make pretty
     move next and previous to top - require customizing theme.
     make colors look nicer - remove opacity on nav icons, change current pages in nav to better color
@@ -22,4 +18,3 @@ message me username so can give her access
 complete watchlists 
 message me the file when done
 try the workflow
-download and install VS code - don't need to setup, just get it so that it opens
