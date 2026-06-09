@@ -33,8 +33,8 @@ logger.add(sys.stderr, level=config.LOG_LEVEL, format=config.LOG_FORMAT)
 class Image(Enum):
     APP_ACCOUNT_BAR = "app-account-bar.png"
     CHARTS_APP = "charts-app.png"
-    COMMUNITY_APP = "community-app.png"
     EDUCATION_APP = "education-app.png"
+    COMMUNITY_APP = "community-app.png"
 
 
 class Url(Enum):
@@ -43,6 +43,7 @@ class Url(Enum):
         "&signal=1&sortColumn=stock&sortDirection=asc&workspace=doji-screener"
     )
     EDUCATION = "https://app.wallstreet.io/education-center/getting-started"
+    COMMUNITY = "https://app.wallstreet.io/communities/live-stream/dashboard"
     LOGIN = "https://app.wallstreet.io/login"
 
 
@@ -50,6 +51,7 @@ CONTEXT = Path("scripts/playwright/.auth/state.json")
 
 SCREENSHOTS_WORFLOW = Path("screenshots-workflow")
 FRESH = SCREENSHOTS_WORFLOW / "fresh"
+COMPLETE = SCREENSHOTS_WORFLOW / "complete"
 
 
 @click.group()
@@ -169,6 +171,17 @@ def screenshot_education():
         logger.info("Education screenshot complete")
 
 
+def screenshot_community():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=None)
+        context = browser.new_context(viewport=config.VIEWPORT, storage_state=CONTEXT)
+        page = context.new_page()
+        logger.info("New browser launched for community screenshot")
+        page.goto(Url.COMMUNITY.value, wait_until="networkidle")
+        page.screenshot(path=FRESH / Image.COMMUNITY_APP.value)
+        logger.info("Community screenshot complete")
+
+
 @screenshot.command()
 def take_all():
     """Take a screenshot of a URL using Playwright."""
@@ -176,6 +189,7 @@ def take_all():
     login(check_only=True)
     screenshot_charts()
     screenshot_education()
+    screenshot_community()
 
 
 if __name__ == "__main__":
