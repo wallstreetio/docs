@@ -47,4 +47,12 @@ git clone https://github.com/wallstreetio/docs.git
 cd docs
 uv sync 
 
+How to setup screenshot workflow
+source .venv/bin/activate 
+playwright install 
+playwright install-deps
+
+how to run screenshot workflow 
+uv run python -m scripts.screenshot ...
+
 

@@ -13,5 +13,19 @@ dev = [
     "pre-commit",
     "pre-commit-uv",
     "ruff",
+    "pytest-playwright",
+    "click>=8.4.0",
+]
 
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
 ]
