@@ -1,9 +1,21 @@
+from dataclasses import dataclass
 import os
 from pathlib import Path
 
 import click
+from dotenv import dotenv_values
 from playwright.async_api import async_playwright
 from playwright.sync_api import sync_playwright
+
+
+@dataclass(frozen=True)
+class Config:
+    USERNAME: str
+    PASSWORD: str
+
+
+config_vars = dotenv_values(".env")
+config = Config(**config_vars)
 
 
 @click.group()
@@ -65,9 +77,9 @@ def log_in(check_only=False, auth_dir="scripts/playwright/.auth"):
 
             page.goto("https://app.wallstreet.io/login", wait_until="networkidle")
 
-            page.get_by_label("Username or Email").fill("")
+            page.get_by_label("Username or Email").fill(config.USERNAME)
             page.get_by_role("button", name="Next").click()
-            page.get_by_role("textbox", name="Password").fill("")
+            page.get_by_role("textbox", name="Password").fill(config.PASSWORD)
             page.get_by_role("button", name="Login").click()
 
             page.locator("a").filter(has_text="Charts").click()
@@ -108,9 +120,9 @@ def auth_single(url, path, name, full_page, width, height):
         click.echo(f"Loading {url}...")
         page.goto(url, wait_until="networkidle")
 
-        page.get_by_label("Username or Email").fill("")
+        page.get_by_label("Username or Email").fill(config.USERNAME)
         page.get_by_role("button", name="Next").click()
-        page.get_by_role("textbox", name="Password").fill("")
+        page.get_by_role("textbox", name="Password").fill(config.PASSWORD)
         page.get_by_role("button", name="Login").click()
 
         page.locator("a").filter(has_text="Charts").click()
