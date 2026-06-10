@@ -1,5 +1,6 @@
 import asyncio
 import os
+import shutil
 import sys
 from dataclasses import dataclass
 from enum import Enum
@@ -54,6 +55,7 @@ CONTEXT = Path("scripts/playwright/.auth/state.json")
 SCREENSHOTS_WORFLOW = Path("screenshots-workflow")
 FRESH = SCREENSHOTS_WORFLOW / "fresh"
 COMPLETE = SCREENSHOTS_WORFLOW / "complete"
+SCREENSHOTS = Path("docs/assets/screenshots")
 
 
 @click.group()
@@ -202,6 +204,62 @@ def take_all():
 
     login(check_only=True)
     asyncio.run(take_all_async())
+
+
+def markup_charts():
+    """Copy charts app screenshot to complete directory."""
+    source = FRESH / Image.CHARTS_APP.value
+    dest = COMPLETE / Image.CHARTS_APP.value
+    shutil.copy2(source, dest)
+
+
+def markup_education():
+    """Copy education app screenshot to complete directory."""
+    source = FRESH / Image.EDUCATION_APP.value
+    dest = COMPLETE / Image.EDUCATION_APP.value
+    shutil.copy2(source, dest)
+
+
+def markup_community():
+    """Copy community app screenshot to complete directory."""
+    source = FRESH / Image.COMMUNITY_APP.value
+    dest = COMPLETE / Image.COMMUNITY_APP.value
+    shutil.copy2(source, dest)
+
+
+@screenshot.command()
+def markup_all():
+    markup_charts()
+    markup_education()
+    markup_community()
+
+
+def move_charts():
+    """Copy charts app screenshot to screenshots directory."""
+    source = COMPLETE / Image.CHARTS_APP.value
+    dest = SCREENSHOTS / Image.CHARTS_APP.value
+    shutil.copy2(source, dest)
+
+
+def move_education():
+    """Copy education app screenshot to screenshots directory."""
+    source = COMPLETE / Image.EDUCATION_APP.value
+    dest = SCREENSHOTS / Image.EDUCATION_APP.value
+    shutil.copy2(source, dest)
+
+
+def move_community():
+    """Copy community app screenshot to screenshots directory."""
+    source = COMPLETE / Image.COMMUNITY_APP.value
+    dest = SCREENSHOTS / Image.COMMUNITY_APP.value
+    shutil.copy2(source, dest)
+
+
+@screenshot.command()
+def move_all():
+    move_charts()
+    move_education()
+    move_community()
 
 
 if __name__ == "__main__":
