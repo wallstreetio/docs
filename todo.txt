@@ -11,3 +11,7 @@ Leslie todo
 complete watchlists 
 message me the file when done
 try the workflow
+
+UI Fix list 
+In the watch list change +(which adds stocks to watchlist) add stock
+In watchlist - maybe try to make adding divider cleaner
