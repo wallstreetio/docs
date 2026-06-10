@@ -2,9 +2,27 @@
 
 ## Overview
 
-TBD
+Watchlists allow you to organize symbols you care about, so you can pull up the right chart fast and keep your focus where it belongs.
 
 ## Guides 
+
+Create a watchlist
+1- Click the three-dot icon at the top-right
+2- Click "create watchlist"
+3- Edit window will open. From the edit window you can: 
+-Rename watchlist
+-Search for and Add symbols
+
+
+Edit a watchlist
+1- From watchlist selector, select desired watchlist
+2- Click the plus sign
+3- Edit window will open. From the edit window you can: 
+-Rename watchlist
+-Add symbols
+-Add color tags to symbols already in watchlist
+-Rearrange symbols by dragging icon on the left
+-Remove symbols
 
 ### TBD
 
