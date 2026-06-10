@@ -24,7 +24,6 @@ dev = [
 extend-select = ["I"]
 
 [tool.ruff.lint.isort]
-force-sort-within-sections = true
 section-order = [
     "future",
     "standard-library",
