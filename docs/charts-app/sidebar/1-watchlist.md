@@ -6,18 +6,18 @@ Watchlists allow you to organize symbols you care about, so you can pull up the 
 
 ## Guides 
 
-Create a watchlist
-1- Click the three-dot icon at the top-right
-2- Click "create watchlist"
-3- Edit window will open. From the edit window you can: 
+### Create a watchlist
+1. Click the three-dot icon at the top-right
+1. Click "create watchlist"
+1. Edit window will open. From the edit window you can: 
 -Rename watchlist
 -Search for and Add symbols
 
 
-Edit a watchlist
-1- From watchlist selector, select desired watchlist
-2- Click the plus sign
-3- Edit window will open. From the edit window you can: 
+### Edit a watchlist
+1. From watchlist selector, select desired watchlist
+1. Click the plus sign
+1. Edit window will open. From the edit window you can: 
 -Rename watchlist
 -Add symbols
 -Add color tags to symbols already in watchlist
