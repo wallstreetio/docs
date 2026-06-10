@@ -1,3 +1,4 @@
+import asyncio
 from dataclasses import dataclass
 from enum import Enum
 import os
@@ -8,6 +9,7 @@ import click
 from dotenv import dotenv_values
 from frozendict import frozendict
 from loguru import logger
+from playwright.async_api import async_playwright
 from playwright.sync_api import sync_playwright
 
 
@@ -135,18 +137,20 @@ def login(check_only=False, auth=None, screenshot=False):
     return storage
 
 
-def screenshot_charts():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=None)
-        context = browser.new_context(viewport=config.VIEWPORT, storage_state=CONTEXT)
-        page = context.new_page()
+async def screenshot_charts():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=None)
+        context = await browser.new_context(
+            viewport=config.VIEWPORT, storage_state=CONTEXT
+        )
+        page = await context.new_page()
         logger.info("New browser launched for charts screenshot")
-        page.goto(Url.CHARTS.value, wait_until="networkidle")
+        await page.goto(Url.CHARTS.value, wait_until="networkidle")
         # Ensure everything is generally loaded.
-        page.get_by_role("button", name="Doji Screener").wait_for(state="visible")
+        await page.get_by_role("button", name="Doji Screener").wait_for(state="visible")
         # Somewhat brittle but mostly works. Check that A image is loaded.
         image = page.get_by_role("img", name="Agilent Technologies, Inc.")
-        image.evaluate("img => img.complete")
+        await image.evaluate("img => img.complete")
 
         # This does not work. Not sure why. Think its because app still
         # shows visible for minimized tools.
@@ -154,32 +158,42 @@ def screenshot_charts():
         # if visible_option == False:
         #     page.get_by_role("button", name="Doji Screener").click()
         #     page.get_by_role("button", name="DAILY").wait_for(state="visible")
-        page.screenshot(path=FRESH / Image.CHARTS_APP.value)
+        await page.screenshot(path=FRESH / Image.CHARTS_APP.value)
         logger.info("charts screenshot complete")
 
 
-def screenshot_education():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=None)
-        context = browser.new_context(viewport=config.VIEWPORT, storage_state=CONTEXT)
-        page = context.new_page()
+async def screenshot_education():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=None)
+        context = await browser.new_context(
+            viewport=config.VIEWPORT, storage_state=CONTEXT
+        )
+        page = await context.new_page()
         logger.info("New browser launched for education screenshot")
-        page.goto(Url.EDUCATION.value, wait_until="networkidle")
+        await page.goto(Url.EDUCATION.value, wait_until="networkidle")
         # Ensure everything is generally loaded.
-        page.get_by_text("play_lesson Getting Started").wait_for(state="visible")
-        page.screenshot(path=FRESH / Image.EDUCATION_APP.value)
-        logger.info("Education screenshot complete")
+        await page.get_by_text("play_lesson Getting Started").wait_for(state="visible")
+        await page.screenshot(path=FRESH / Image.EDUCATION_APP.value)
+        logger.info("education screenshot complete")
 
 
-def screenshot_community():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=None)
-        context = browser.new_context(viewport=config.VIEWPORT, storage_state=CONTEXT)
-        page = context.new_page()
+async def screenshot_community():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=None)
+        context = await browser.new_context(
+            viewport=config.VIEWPORT, storage_state=CONTEXT
+        )
+        page = await context.new_page()
         logger.info("New browser launched for community screenshot")
-        page.goto(Url.COMMUNITY.value, wait_until="networkidle")
-        page.screenshot(path=FRESH / Image.COMMUNITY_APP.value)
-        logger.info("Community screenshot complete")
+        await page.goto(Url.COMMUNITY.value, wait_until="networkidle")
+        await page.screenshot(path=FRESH / Image.COMMUNITY_APP.value)
+        logger.info("community screenshot complete")
+
+
+async def take_all_async():
+    await asyncio.gather(
+        screenshot_community(), screenshot_education(), screenshot_charts()
+    )
 
 
 @screenshot.command()
@@ -187,9 +201,7 @@ def take_all():
     """Take a screenshot of a URL using Playwright."""
 
     login(check_only=True)
-    screenshot_charts()
-    screenshot_education()
-    screenshot_community()
+    asyncio.run(take_all_async())
 
 
 if __name__ == "__main__":
