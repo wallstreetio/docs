@@ -162,6 +162,8 @@ async def screenshot_charts():
         #     page.get_by_role("button", name="DAILY").wait_for(state="visible")
         await page.screenshot(path=FRESH / Image.CHARTS_APP.value)
         logger.info("charts screenshot complete")
+        await page.screenshot(path=FRESH / Image.APP_ACCOUNT_BAR.value)
+        logger.info("app and account bar screenshot complete")
 
 
 async def screenshot_education():
@@ -206,6 +208,13 @@ def take_all():
     asyncio.run(take_all_async())
 
 
+def markup_app_account_bar():
+    """Copy charts app screenshot to complete directory."""
+    source = FRESH / Image.APP_ACCOUNT_BAR.value
+    dest = COMPLETE / Image.APP_ACCOUNT_BAR.value
+    shutil.copy2(source, dest)
+
+
 def markup_charts():
     """Copy charts app screenshot to complete directory."""
     source = FRESH / Image.CHARTS_APP.value
@@ -229,9 +238,17 @@ def markup_community():
 
 @screenshot.command()
 def markup_all():
+    markup_app_account_bar()
     markup_charts()
     markup_education()
     markup_community()
+
+
+def move_app_account_bar():
+    """Copy charts app screenshot to screenshots directory."""
+    source = COMPLETE / Image.APP_ACCOUNT_BAR.value
+    dest = SCREENSHOTS / Image.APP_ACCOUNT_BAR.value
+    shutil.copy2(source, dest)
 
 
 def move_charts():
@@ -257,6 +274,7 @@ def move_community():
 
 @screenshot.command()
 def move_all():
+    move_app_account_bar()
     move_charts()
     move_education()
     move_community()
