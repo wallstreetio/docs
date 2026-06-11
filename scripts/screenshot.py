@@ -234,7 +234,7 @@ def norm_bbox(img, x1, y1, x2, y2):
     return bbox
 
 
-def add_cv2_label(img, text, bbox, below=True, gap=0):
+def add_cv2_label(img, text, bbox, below=True, gap=0, connector=False):
     """Black text on a white box, centered horizontally on a bbox."""
     x1, y1, x2, y2 = bbox
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -249,6 +249,12 @@ def add_cv2_label(img, text, bbox, below=True, gap=0):
     label_y1 = (y2 + gap) if below else (y1 - box_h - gap)
     label_x2 = label_x1 + box_w
     label_y2 = label_y1 + box_h
+    if connector:
+        line_color = (255, 255, 255)
+        if below:
+            cv2.line(img, (center_x, y2), (center_x, label_y1), line_color, 1)
+        else:
+            cv2.line(img, (center_x, label_y2), (center_x, y1), line_color, 1)
     cv2.rectangle(img, (label_x1, label_y1), (label_x2, label_y2), (255, 255, 255), -1)
     text_x = label_x1 + (box_w - text_w) // 2
     text_y = label_y1 + (box_h + text_h) // 2
@@ -291,7 +297,10 @@ def markup_chart_area():
     """Markup and save chart area screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.CHART_AREA.value)
     # Stock Search
-    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.06))
+    stock_search = norm_bbox(img, 0.1, 0, 0.16, 0.06)
+    img = bbv.draw_box(img, stock_search)
+    gap = int(0.05 * img.shape[1])
+    img = add_cv2_label(img, "Stock Search", stock_search, gap=gap, connector=True)
     # Charting Tools
     charting_tools = norm_bbox(img, 0.1, 0.0, 0.405, 0.06)
     img = bbv.draw_box(img, charting_tools)
