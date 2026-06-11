@@ -284,10 +284,14 @@ def markup_app_account_bar():
     # App and Account Bar
     app_account = norm_bbox(img, 0, 0, 0.036, 1.0)
     img = bbv.draw_box(img, app_account)
+    gap = int(0.03 * img.shape[0])
+    img = add_cv2_label(
+        img, "App and Account Bar", app_account, side="right", gap=gap, connector=True
+    )
     # Live Stream
     live_stream = norm_bbox(img, 0.92, 0.0, 1.0, 0.056)
     img = bbv.draw_box(img, live_stream)
-    gap = int(0.03 * img.shape[1])
+    gap = int(0.04 * img.shape[0])
     img = add_cv2_label(
         img, "Live Stream", live_stream, side="left", gap=gap, connector=True
     )
