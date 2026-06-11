@@ -366,10 +366,16 @@ def markup_education():
 
 
 def markup_community():
-    """Copy community app screenshot to complete directory."""
-    source = FRESH / Shot.COMMUNITY_APP.value
-    dest = COMPLETE / Shot.COMMUNITY_APP.value
-    shutil.copy2(source, dest)
+    """Markup and save community app screenshot to complete directory."""
+    img = cv2.imread(FRESH / Shot.COMMUNITY_APP.value)
+    community_bar = norm_bbox(img, 0.035, 0, 1.0, 0.06)
+    img = bbv.draw_box(img, community_bar)
+    gap = int(0.01 * img.shape[1])
+    img = add_cv2_label(img, "Community Bar", community_bar, gap=gap, connector=True)
+    community_area = norm_bbox(img, 0.035, 0.06, 1.0, 1.0)
+    img = bbv.draw_box(img, community_area)
+    img = bbv.add_label(img, "Community Area", community_area, top=False)
+    cv2.imwrite(COMPLETE / Shot.COMMUNITY_APP.value, img)
 
 
 @screenshot.command()
