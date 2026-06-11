@@ -325,17 +325,24 @@ def markup_toolbar():
 
 
 def markup_sidebar():
-    """Markup and sidebar screenshot to complete directory."""
-    source = FRESH / Shot.SIDEBAR.value
-    dest = COMPLETE / Shot.SIDEBAR.value
-    shutil.copy2(source, dest)
+    """Markup and save sidebar screenshot to complete directory."""
+    img = cv2.imread(FRESH / Shot.SIDEBAR.value)
+    sidebar_widgets = norm_bbox(img, 0.79, 0.055, 1.0, 0.11)
+    img = bbv.draw_box(img, sidebar_widgets)
+    img = bbv.add_label(img, "Sidebar Widgets", sidebar_widgets, top=True)
+    sidebar_display = norm_bbox(img, 0.79, 0.11, 1.0, 1.0)
+    img = bbv.draw_box(img, sidebar_display)
+    img = bbv.add_label(img, "Sidebar Display Area", sidebar_display, top=False)
+    cv2.imwrite(COMPLETE / Shot.SIDEBAR.value, img)
 
 
 def markup_education():
     """Copy education app screenshot to complete directory."""
-    source = FRESH / Shot.EDUCATION_APP.value
-    dest = COMPLETE / Shot.EDUCATION_APP.value
-    shutil.copy2(source, dest)
+    img = cv2.imread(FRESH / Shot.EDUCATION_APP.value)
+    widgets = norm_bbox(img, 0.035, 0.06, 0.79, 0.63)
+    img = bbv.draw_box(img, widgets)
+    img = bbv.add_label(img, "Widgets", widgets)
+    cv2.imwrite(COMPLETE / Shot.EDUCATION_APP.value, img)
 
 
 def markup_community():

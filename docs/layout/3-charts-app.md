@@ -6,7 +6,7 @@
 ### Chart Area
 ![Charts app](../assets/screenshots/chart-area.png){ loading=lazy }
 
-* Stock Search: The Stock Search is boxed in white with no label.
+* Stock Search
 * [Charting Tools](../charts-app/chart-area/1-charting-tools.md)
 * [Plot](../charts-app/chart-area/2-plot.md)
 
@@ -26,8 +26,8 @@
 ### Sidebar
 ![Charts app](../assets/screenshots/sidebar.png){ loading=lazy }
 
-* Sidebar widget selector
-* Sidebar display area
+* Sidebar Widgets
+* Sidebar Display Area
 * All sidebar widgets:
     * [Watchlist](../charts-app/sidebar/1-watchlist.md)
     * [Chatroom](../charts-app/sidebar/2-chatroom.md)
