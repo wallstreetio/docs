@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "bbox-visualizer>=0.3.0",
     "frozendict>=2.4.7",
     "loguru>=0.7.3",
     "opencv-python>=4.13.0.92",

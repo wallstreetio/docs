@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 
+import bbox_visualizer as bbv
 import click
 import cv2
 from dotenv import dotenv_values
@@ -40,6 +41,9 @@ logger.add(sys.stderr, level=config.LOG_LEVEL, format=config.LOG_FORMAT)
 class Shot(Enum):
     APP_ACCOUNT_BAR = "app-account-bar.png"
     CHARTS_APP = "charts-app.png"
+    CHART_AREA = "chart-area.png"
+    TOOLBAR = "toolbar.png"
+    SIDEBAR = "sidebar.png"
     EDUCATION_APP = "education-app.png"
     COMMUNITY_APP = "community-app.png"
 
@@ -154,6 +158,8 @@ async def screenshot_charts():
         await page.goto(Url.CHARTS.value, wait_until="networkidle")
         # Ensure everything is generally loaded.
         await page.get_by_role("button", name="Doji Screener").wait_for(state="visible")
+        await page.get_by_role("button", name="TODAY", exact=True).click()
+        await page.get_by_role("menuitem", name="Show All").click()
         # Somewhat brittle but mostly works. Check that A image is loaded.
         image = page.get_by_role("img", name="Agilent Technologies, Inc.")
         await image.evaluate("img => img.complete")
@@ -168,6 +174,12 @@ async def screenshot_charts():
         logger.info("charts screenshot complete")
         await page.screenshot(path=FRESH / Shot.APP_ACCOUNT_BAR.value)
         logger.info("app and account bar screenshot complete")
+        await page.screenshot(path=FRESH / Shot.CHART_AREA.value)
+        logger.info("chart area screenshot complete")
+        await page.screenshot(path=FRESH / Shot.TOOLBAR.value)
+        logger.info("toolbar screenshot complete")
+        await page.screenshot(path=FRESH / Shot.SIDEBAR.value)
+        logger.info("sidebar screenshot complete")
 
 
 async def screenshot_education():
@@ -181,6 +193,8 @@ async def screenshot_education():
         await page.goto(Url.EDUCATION.value, wait_until="networkidle")
         # Ensure everything is generally loaded.
         await page.get_by_text("play_lesson Getting Started").wait_for(state="visible")
+        # Fix this
+        # page.locator("iframe[title=\"WallStreet.io 4.0 - Introduction\"]").content_frame.get_by_role("link", name="WallStreet IO")
         await page.screenshot(path=FRESH / Shot.EDUCATION_APP.value)
         logger.info("education screenshot complete")
 
@@ -194,6 +208,7 @@ async def screenshot_community():
         page = await context.new_page()
         logger.info("New browser launched for community screenshot")
         await page.goto(Url.COMMUNITY.value, wait_until="networkidle")
+        await page.get_by_role("link", name="Dashboard").wait_for(state="visible")
         await page.screenshot(path=FRESH / Shot.COMMUNITY_APP.value)
         logger.info("community screenshot complete")
 
@@ -212,10 +227,16 @@ def take_all():
     asyncio.run(take_all_async())
 
 
+def norm_bbox(img, x1, y1, x2, y2):
+    """Normalized bounding box so image size won't matter just ratio"""
+    height, width = img.shape[:2]
+    bbox = (int(width * x1), int(height * y1), int(width * x2), int(height * y2))
+    return bbox
+
+
 def markup_app_account_bar():
-    """Markup and save charts app screenshot to complete directory."""
-    source = FRESH / Shot.APP_ACCOUNT_BAR.value
-    img = cv2.imread(str(source))
+    """Markup and save app and account screenshot to complete directory."""
+    img = cv2.imread(FRESH / Shot.APP_ACCOUNT_BAR.value)
 
     height, width = img.shape[:2]
 
@@ -226,13 +247,39 @@ def markup_app_account_bar():
         ImageColor.getrgb(config.MARKUP_COLOR)[::-1],
         config.MARKUP_WIDTH,
     )
-    cv2.imwrite(str(COMPLETE / Shot.APP_ACCOUNT_BAR.value), img)
+    cv2.imwrite(COMPLETE / Shot.APP_ACCOUNT_BAR.value, img)
 
 
 def markup_charts():
-    """Copy charts app screenshot to complete directory."""
-    source = FRESH / Shot.CHARTS_APP.value
-    dest = COMPLETE / Shot.CHARTS_APP.value
+    """Markup and save charts screenshot to complete directory."""
+    img = cv2.imread(FRESH / Shot.CHARTS_APP.value)
+    # Stock Search
+    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.05))
+    # img = bbv.add_label(img, "Object", bbox)
+    chart_area = norm_bbox(img, 0.035, 0.0, 0.8, 0.6)
+    img = bbv.draw_box(img, chart_area)
+    img = bbv.add_label(img, "Chart Area", chart_area)
+    cv2.imwrite(COMPLETE / Shot.CHARTS_APP.value, img)
+
+
+def markup_chart_area():
+    """Markup and save chart area screenshot to complete directory."""
+    source = FRESH / Shot.CHART_AREA.value
+    dest = COMPLETE / Shot.CHART_AREA.value
+    shutil.copy2(source, dest)
+
+
+def markup_toolbar():
+    """Markup and save toolbar screenshot to complete directory."""
+    source = FRESH / Shot.TOOLBAR.value
+    dest = COMPLETE / Shot.TOOLBAR.value
+    shutil.copy2(source, dest)
+
+
+def markup_sidebar():
+    """Markup and sidebar screenshot to complete directory."""
+    source = FRESH / Shot.SIDEBAR.value
+    dest = COMPLETE / Shot.SIDEBAR.value
     shutil.copy2(source, dest)
 
 
@@ -255,6 +302,9 @@ def markup_all():
     """Add bounding boxes and labels to screenshots."""
     markup_app_account_bar()
     markup_charts()
+    markup_chart_area()
+    markup_toolbar()
+    markup_sidebar()
     markup_education()
     markup_community()
 
@@ -290,10 +340,19 @@ def move_community():
 @screenshot.command()
 def move_all():
     """Replace docs screenshots with screenshots from complete"""
-    move_app_account_bar()
-    move_charts()
-    move_education()
-    move_community()
+    shots = [
+        Shot.APP_ACCOUNT_BAR,
+        Shot.CHARTS_APP,
+        Shot.CHART_AREA,
+        Shot.TOOLBAR,
+        Shot.SIDEBAR,
+        Shot.EDUCATION_APP,
+        Shot.COMMUNITY_APP,
+    ]
+    for one_shot in shots:
+        source = COMPLETE / one_shot.value
+        dest = SCREENSHOTS / one_shot.value
+        shutil.copy2(source, dest)
 
 
 if __name__ == "__main__":

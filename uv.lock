@@ -3,6 +3,19 @@ revision = 3
 requires-python = ">=3.14"
 
 [[package]]
+name = "bbox-visualizer"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "opencv-python" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/71/55/9f2b0ff08b476998ca905e6a14da9e9b8d149e2bd3caf6f95542f86ccaee/bbox_visualizer-0.3.0.tar.gz", hash = "sha256:dc124756ac37bd3a87960437d4f21123ba1015c2d845e2ef8d59812946a2f95c", size = 9054, upload-time = "2026-01-29T07:01:54.066Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/6a/47e50f1f36f6c208574624369c4c9453ca15dcd3e85d026c53d6bd880b11/bbox_visualizer-0.3.0-py3-none-any.whl", hash = "sha256:da8a035c3b082ac453132d69c1531d348b078082505ba4426f48d1e15808f9d5", size = 10817, upload-time = "2026-01-29T07:01:53.078Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2026.5.20"
 source = { registry = "https://pypi.org/simple" }
@@ -105,6 +118,7 @@ name = "docs"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "bbox-visualizer" },
     { name = "frozendict" },
     { name = "loguru" },
     { name = "opencv-python" },
@@ -124,6 +138,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "bbox-visualizer", specifier = ">=0.3.0" },
     { name = "frozendict", specifier = ">=2.4.7" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "opencv-python", specifier = ">=4.13.0.92" },
