@@ -10,6 +10,7 @@ import click
 from dotenv import dotenv_values
 from frozendict import frozendict
 from loguru import logger
+from PIL import Image, ImageDraw
 from playwright.async_api import async_playwright
 from playwright.sync_api import sync_playwright
 
@@ -25,6 +26,8 @@ class Config:
         "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
     )
     VIEWPORT: frozendict = frozendict(width=1920, height=1080)
+    MARKUP_COLOR: str = "#5DADE2"
+    MARKUP_WIDTH: int = 6
 
 
 config_vars = dotenv_values(".env")
@@ -33,7 +36,7 @@ logger.remove()
 logger.add(sys.stderr, level=config.LOG_LEVEL, format=config.LOG_FORMAT)
 
 
-class Image(Enum):
+class Shot(Enum):
     APP_ACCOUNT_BAR = "app-account-bar.png"
     CHARTS_APP = "charts-app.png"
     EDUCATION_APP = "education-app.png"
@@ -160,9 +163,9 @@ async def screenshot_charts():
         # if visible_option == False:
         #     page.get_by_role("button", name="Doji Screener").click()
         #     page.get_by_role("button", name="DAILY").wait_for(state="visible")
-        await page.screenshot(path=FRESH / Image.CHARTS_APP.value)
+        await page.screenshot(path=FRESH / Shot.CHARTS_APP.value)
         logger.info("charts screenshot complete")
-        await page.screenshot(path=FRESH / Image.APP_ACCOUNT_BAR.value)
+        await page.screenshot(path=FRESH / Shot.APP_ACCOUNT_BAR.value)
         logger.info("app and account bar screenshot complete")
 
 
@@ -177,7 +180,7 @@ async def screenshot_education():
         await page.goto(Url.EDUCATION.value, wait_until="networkidle")
         # Ensure everything is generally loaded.
         await page.get_by_text("play_lesson Getting Started").wait_for(state="visible")
-        await page.screenshot(path=FRESH / Image.EDUCATION_APP.value)
+        await page.screenshot(path=FRESH / Shot.EDUCATION_APP.value)
         logger.info("education screenshot complete")
 
 
@@ -190,7 +193,7 @@ async def screenshot_community():
         page = await context.new_page()
         logger.info("New browser launched for community screenshot")
         await page.goto(Url.COMMUNITY.value, wait_until="networkidle")
-        await page.screenshot(path=FRESH / Image.COMMUNITY_APP.value)
+        await page.screenshot(path=FRESH / Shot.COMMUNITY_APP.value)
         logger.info("community screenshot complete")
 
 
@@ -209,30 +212,38 @@ def take_all():
 
 
 def markup_app_account_bar():
-    """Copy charts app screenshot to complete directory."""
-    source = FRESH / Image.APP_ACCOUNT_BAR.value
-    dest = COMPLETE / Image.APP_ACCOUNT_BAR.value
-    shutil.copy2(source, dest)
+    """Markup and save charts app screenshot to complete directory."""
+
+    # Load the image
+    img = Image.open(FRESH / Shot.APP_ACCOUNT_BAR.value)
+    draw = ImageDraw.Draw(img)
+
+    # Draw a soft blue box around the left app bar
+    draw.rectangle(
+        [0, 0, int(img.width * 0.038), img.height], outline="#5DADE2", width=6
+    )
+
+    img.save(COMPLETE / Shot.APP_ACCOUNT_BAR.value)
 
 
 def markup_charts():
     """Copy charts app screenshot to complete directory."""
-    source = FRESH / Image.CHARTS_APP.value
-    dest = COMPLETE / Image.CHARTS_APP.value
+    source = FRESH / Shot.CHARTS_APP.value
+    dest = COMPLETE / Shot.CHARTS_APP.value
     shutil.copy2(source, dest)
 
 
 def markup_education():
     """Copy education app screenshot to complete directory."""
-    source = FRESH / Image.EDUCATION_APP.value
-    dest = COMPLETE / Image.EDUCATION_APP.value
+    source = FRESH / Shot.EDUCATION_APP.value
+    dest = COMPLETE / Shot.EDUCATION_APP.value
     shutil.copy2(source, dest)
 
 
 def markup_community():
     """Copy community app screenshot to complete directory."""
-    source = FRESH / Image.COMMUNITY_APP.value
-    dest = COMPLETE / Image.COMMUNITY_APP.value
+    source = FRESH / Shot.COMMUNITY_APP.value
+    dest = COMPLETE / Shot.COMMUNITY_APP.value
     shutil.copy2(source, dest)
 
 
@@ -246,29 +257,29 @@ def markup_all():
 
 def move_app_account_bar():
     """Copy charts app screenshot to screenshots directory."""
-    source = COMPLETE / Image.APP_ACCOUNT_BAR.value
-    dest = SCREENSHOTS / Image.APP_ACCOUNT_BAR.value
+    source = COMPLETE / Shot.APP_ACCOUNT_BAR.value
+    dest = SCREENSHOTS / Shot.APP_ACCOUNT_BAR.value
     shutil.copy2(source, dest)
 
 
 def move_charts():
     """Copy charts app screenshot to screenshots directory."""
-    source = COMPLETE / Image.CHARTS_APP.value
-    dest = SCREENSHOTS / Image.CHARTS_APP.value
+    source = COMPLETE / Shot.CHARTS_APP.value
+    dest = SCREENSHOTS / Shot.CHARTS_APP.value
     shutil.copy2(source, dest)
 
 
 def move_education():
     """Copy education app screenshot to screenshots directory."""
-    source = COMPLETE / Image.EDUCATION_APP.value
-    dest = SCREENSHOTS / Image.EDUCATION_APP.value
+    source = COMPLETE / Shot.EDUCATION_APP.value
+    dest = SCREENSHOTS / Shot.EDUCATION_APP.value
     shutil.copy2(source, dest)
 
 
 def move_community():
     """Copy community app screenshot to screenshots directory."""
-    source = COMPLETE / Image.COMMUNITY_APP.value
-    dest = SCREENSHOTS / Image.COMMUNITY_APP.value
+    source = COMPLETE / Shot.COMMUNITY_APP.value
+    dest = SCREENSHOTS / Shot.COMMUNITY_APP.value
     shutil.copy2(source, dest)
 
 
