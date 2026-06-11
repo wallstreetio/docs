@@ -7,10 +7,11 @@ from enum import Enum
 from pathlib import Path
 
 import click
+import cv2
 from dotenv import dotenv_values
 from frozendict import frozendict
 from loguru import logger
-from PIL import Image, ImageDraw
+from PIL import ImageColor
 from playwright.async_api import async_playwright
 from playwright.sync_api import sync_playwright
 
@@ -27,7 +28,7 @@ class Config:
     )
     VIEWPORT: frozendict = frozendict(width=1920, height=1080)
     MARKUP_COLOR: str = "#5DADE2"
-    MARKUP_WIDTH: int = 6
+    MARKUP_WIDTH: int = 5
 
 
 config_vars = dotenv_values(".env")
@@ -213,17 +214,19 @@ def take_all():
 
 def markup_app_account_bar():
     """Markup and save charts app screenshot to complete directory."""
+    source = FRESH / Shot.APP_ACCOUNT_BAR.value
+    img = cv2.imread(str(source))
 
-    # Load the image
-    img = Image.open(FRESH / Shot.APP_ACCOUNT_BAR.value)
-    draw = ImageDraw.Draw(img)
+    height, width = img.shape[:2]
 
-    # Draw a soft blue box around the left app bar
-    draw.rectangle(
-        [0, 0, int(img.width * 0.038), img.height], outline="#5DADE2", width=6
+    cv2.rectangle(
+        img,
+        (0, 0),
+        (int(width * 0.038), height),
+        ImageColor.getrgb(config.MARKUP_COLOR)[::-1],
+        config.MARKUP_WIDTH,
     )
-
-    img.save(COMPLETE / Shot.APP_ACCOUNT_BAR.value)
+    cv2.imwrite(str(COMPLETE / Shot.APP_ACCOUNT_BAR.value), img)
 
 
 def markup_charts():

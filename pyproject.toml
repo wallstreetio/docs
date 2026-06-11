@@ -7,6 +7,7 @@ requires-python = ">=3.14"
 dependencies = [
     "frozendict>=2.4.7",
     "loguru>=0.7.3",
+    "opencv-python>=4.13.0.92",
     "pillow>=12.2.0",
     "python-dotenv>=1.2.2",
     "zensical>=0.0.43",
