@@ -12,7 +12,6 @@ import cv2
 from dotenv import dotenv_values
 from frozendict import frozendict
 from loguru import logger
-from PIL import ImageColor
 from playwright.async_api import async_playwright
 from playwright.sync_api import sync_playwright
 
@@ -265,16 +264,14 @@ def add_cv2_label(img, text, bbox, below=True, gap=0, connector=False):
 def markup_app_account_bar():
     """Markup and save app and account screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.APP_ACCOUNT_BAR.value)
-
-    height, width = img.shape[:2]
-
-    cv2.rectangle(
-        img,
-        (0, 0),
-        (int(width * 0.038), height),
-        ImageColor.getrgb(config.MARKUP_COLOR)[::-1],
-        config.MARKUP_WIDTH,
-    )
+    # App and Account Bar
+    app_account = norm_bbox(img, 0, 0, 0.036, 1.0)
+    img = bbv.draw_box(img, app_account)
+    # Live Stream
+    live_stream = norm_bbox(img, 0.915, 0.0, 1.0, 0.056)
+    img = bbv.draw_box(img, live_stream)
+    gap = int(0.03 * img.shape[1])
+    img = add_cv2_label(img, "Live Stream", live_stream, gap=gap, connector=True)
     cv2.imwrite(COMPLETE / Shot.APP_ACCOUNT_BAR.value, img)
 
 
