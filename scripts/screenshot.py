@@ -337,11 +337,15 @@ def markup_sidebar():
 
 
 def markup_education():
-    """Copy education app screenshot to complete directory."""
+    """Markup and save education app screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.EDUCATION_APP.value)
-    widgets = norm_bbox(img, 0.035, 0.06, 0.79, 0.63)
-    img = bbv.draw_box(img, widgets)
-    img = bbv.add_label(img, "Widgets", widgets)
+    education_bar = norm_bbox(img, 0.035, 0, 1.0, 0.06)
+    img = bbv.draw_box(img, education_bar)
+    gap = int(0.03 * img.shape[1])
+    img = add_cv2_label(img, "Education Bar", education_bar, gap=gap, connector=True)
+    education_area = norm_bbox(img, 0.035, 0.06, 1.0, 1.0)
+    img = bbv.draw_box(img, education_area)
+    img = bbv.add_label(img, "Education Area", education_area, top=False)
     cv2.imwrite(COMPLETE / Shot.EDUCATION_APP.value, img)
 
 
