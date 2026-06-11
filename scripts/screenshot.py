@@ -253,20 +253,24 @@ def markup_app_account_bar():
 def markup_charts():
     """Markup and save charts screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.CHARTS_APP.value)
-    # Stock Search
-    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.05))
-    # img = bbv.add_label(img, "Object", bbox)
-    chart_area = norm_bbox(img, 0.035, 0.0, 0.8, 0.6)
+    chart_area = norm_bbox(img, 0.035, 0.0, 0.79, 0.63)
     img = bbv.draw_box(img, chart_area)
     img = bbv.add_label(img, "Chart Area", chart_area)
+    toolbar = norm_bbox(img, 0.035, 0.63, 0.79, 1.0)
+    img = bbv.draw_box(img, toolbar)
+    img = bbv.add_label(img, "Toolbar", toolbar, top=False)
+    sidebar = norm_bbox(img, 0.79, 0, 1.0, 1.0)
+    img = bbv.draw_box(img, sidebar)
+    img = bbv.add_label(img, "Sidebar", sidebar)
     cv2.imwrite(COMPLETE / Shot.CHARTS_APP.value, img)
 
 
 def markup_chart_area():
     """Markup and save chart area screenshot to complete directory."""
-    source = FRESH / Shot.CHART_AREA.value
-    dest = COMPLETE / Shot.CHART_AREA.value
-    shutil.copy2(source, dest)
+    img = cv2.imread(FRESH / Shot.CHART_AREA.value)
+    # Stock Search
+    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.05))
+    cv2.imwrite(COMPLETE / Shot.CHART_AREA.value, img)
 
 
 def markup_toolbar():
