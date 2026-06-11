@@ -205,7 +205,7 @@ async def take_all_async():
 
 @screenshot.command()
 def take_all():
-    """Take a screenshot of a URL using Playwright."""
+    """Take all apps screenshots using Playwright."""
 
     login(check_only=True)
     asyncio.run(take_all_async())
@@ -249,6 +249,7 @@ def markup_community():
 
 @screenshot.command()
 def markup_all():
+    """Add bounding boxes and labels to screenshots."""
     markup_app_account_bar()
     markup_charts()
     markup_education()
@@ -285,6 +286,7 @@ def move_community():
 
 @screenshot.command()
 def move_all():
+    """Replace docs screenshots with screenshots from complete"""
     move_app_account_bar()
     move_charts()
     move_education()
