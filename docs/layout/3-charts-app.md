@@ -6,7 +6,7 @@
 ### Chart Area
 ![Charts app](../assets/screenshots/chart-area.png){ loading=lazy }
 
-* Stock Search
+* Stock Search: The Stock Search is boxed in white with no label.
 * [Charting Tools](../charts-app/chart-area/1-charting-tools.md)
 * [Plot](../charts-app/chart-area/2-plot.md)
 
