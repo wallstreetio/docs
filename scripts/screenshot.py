@@ -234,6 +234,28 @@ def norm_bbox(img, x1, y1, x2, y2):
     return bbox
 
 
+def add_cv2_label(img, text, bbox, below=True, gap=0):
+    """Black text on a white box, centered horizontally on a bbox."""
+    x1, y1, x2, y2 = bbox
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    size = 1
+    thickness = 2
+    padding = 8
+    (text_w, text_h), _baseline = cv2.getTextSize(text, font, size, thickness)
+    box_w = text_w + 2 * padding
+    box_h = text_h + 2 * padding
+    center_x = (x1 + x2) // 2
+    label_x1 = center_x - box_w // 2
+    label_y1 = (y2 + gap) if below else (y1 - box_h - gap)
+    label_x2 = label_x1 + box_w
+    label_y2 = label_y1 + box_h
+    cv2.rectangle(img, (label_x1, label_y1), (label_x2, label_y2), (255, 255, 255), -1)
+    text_x = label_x1 + (box_w - text_w) // 2
+    text_y = label_y1 + (box_h + text_h) // 2
+    cv2.putText(img, text, (text_x, text_y), font, size, (0, 0, 0), thickness)
+    return img
+
+
 def markup_app_account_bar():
     """Markup and save app and account screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.APP_ACCOUNT_BAR.value)
@@ -269,7 +291,15 @@ def markup_chart_area():
     """Markup and save chart area screenshot to complete directory."""
     img = cv2.imread(FRESH / Shot.CHART_AREA.value)
     # Stock Search
-    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.05))
+    img = bbv.draw_box(img, norm_bbox(img, 0.1, 0, 0.16, 0.06))
+    # Charting Tools
+    charting_tools = norm_bbox(img, 0.1, 0.0, 0.405, 0.06)
+    img = bbv.draw_box(img, charting_tools)
+    img = add_cv2_label(img, "Charting Tools", charting_tools)
+    # Plot (candlestick chart, below header and above time-range selector)
+    plot = norm_bbox(img, 0.035, 0.06, 0.79, 0.63)
+    img = bbv.draw_box(img, plot)
+    img = bbv.add_label(img, "Plot", plot)
     cv2.imwrite(COMPLETE / Shot.CHART_AREA.value, img)
 
 
