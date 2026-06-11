@@ -314,9 +314,14 @@ def markup_chart_area():
 
 def markup_toolbar():
     """Markup and save toolbar screenshot to complete directory."""
-    source = FRESH / Shot.TOOLBAR.value
-    dest = COMPLETE / Shot.TOOLBAR.value
-    shutil.copy2(source, dest)
+    img = cv2.imread(FRESH / Shot.TOOLBAR.value)
+    filter_area = norm_bbox(img, 0.035, 0.63, 0.79, 0.718)
+    img = bbv.draw_box(img, filter_area)
+    img = bbv.add_label(img, "Filter Area", filter_area, top=False)
+    data_area = norm_bbox(img, 0.035, 0.718, 0.79, 1.0)
+    img = bbv.draw_box(img, data_area)
+    img = bbv.add_label(img, "Data Area", data_area, top=False)
+    cv2.imwrite(COMPLETE / Shot.TOOLBAR.value, img)
 
 
 def markup_sidebar():
