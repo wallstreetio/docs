@@ -15,3 +15,4 @@ try the workflow
 UI Fix list 
 In the watch list change +(which adds stocks to watchlist) add stock
 In watchlist - maybe try to make adding divider cleaner
+In chart area, move multi charts and settings to align with chart and extend watchlist up
