@@ -4,8 +4,6 @@ make pretty
     make colors look nicer - remove opacity on nav icons, change current pages in nav to better color
 investigate folding sections
 consider - most common tools section
-screenshot markup workflow
-complete missing sections
 
 Leslie todo 
 complete watchlists 
@@ -16,3 +14,8 @@ UI Fix list
 In the watch list change +(which adds stocks to watchlist) add stock
 In watchlist - maybe try to make adding divider cleaner
 In chart area, move multi charts and settings to align with chart and extend watchlist up
+In charting tools, templates and layouts missing on hover
+In charting tools, add comparison need to be clearer ( probably bigger and colored)
+Layouts don't appear to work in 4.0
+in plot, Templates which squares highlighted does not update
+In set price alert popout, add symbol label and move Condition label to correct spot

@@ -2,23 +2,27 @@
 
 ## Overview
 
-Charting tools allow the user the change the plot any number of way.
+Charting tools allow the user to change the plot any number of way. After a tool is selected, then the plot is populated. Follow on actions are generally taken in the Plot.
 
 ## Guides 
 
-### Add drawings
+### Add a drawing
 
 1. Click on Drawing tools.
 1. The drawing tools toolbar with populate on the left hand side of the Plot 
-1. Select desired tool and begin drawing
+1. Select desired tool and begin drawing 
 
-### Favorite chart types
+### Edit or remove a drawing
+* See [Edit a drawing](2-plot.md#edit-a-drawing)
+* See [shortcut actions](2-plot.md#access-shortcut-actions)
+
+### Favorite a chart type
 
 1. Click on Chart types 
 2. Hover over desired type and star will populate on the left
 3. Click on the star and the candle type will populate in the Charting Tools area just to right of Chart types.
 
-### Add indicators 
+### Add an indicator
 
 1. Click on Studies & indicators 
 2. From the dropdown select the desired indicator
@@ -52,11 +56,16 @@ Charting tools allow the user the change the plot any number of way.
 1. The new indicator set will now show when Indicator sets is clicked.
 1. The old indicator set will still exist. If desired, delete old indicator set.
 
-
-
+### Display multiple charts
+1. Click on Templates
+1. From the dropdown select the desired chart configuration 
+1. One or more charts will populate in the plot
 
 
 ## Reference
 
-### Indicator sets 
+### Indicator set 
 An indicator set is a group of indicators that will populate on the plot as a group. Indicator sets can only be directly created or deleted. To update see [Update an Indicator](#update-an-indicator-set).
+
+### Template 
+The template determines how many charts the user has on the plot, and how they are arranged. It supports 1 to 16 charts being view simultaneously.
