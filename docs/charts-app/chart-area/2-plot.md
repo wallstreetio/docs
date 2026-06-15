@@ -37,7 +37,16 @@ The Plot displays symbol information as a time series.
 1. Follow the prompt
 
 ### Edit a drawing
-1. Placeholder
+1. Right click on drawing
+1. Use dropdown to edit desired aspects. 
+
+## Delete a drawing 
+1. Right click on drawing 
+1. Click "Delete Drawing"
+
+## Delete a drawing (alternate)
+1. Left click on drawing
+1. Press delete button on the keyboard
 
 
 ## Reference

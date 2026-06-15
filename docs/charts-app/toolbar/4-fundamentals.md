@@ -10,11 +10,3 @@ The Fundamentals tool helps the user explore a companies fundamentals across mul
 * Analyst 
 * SEC Risks
 * Profile
-
-## FAQ 
-
-### TBD
-
-## Reference
-
-### TBD

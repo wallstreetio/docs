@@ -13,11 +13,3 @@ Seasonality helps the user explore the seasonality experienced by stocks or sect
 1. Click on a stock in the Data Area.
 1. Details for selected stock will populate on the right side of the Data Area 
 1. To hide detailed seasonality, click "X" in upper right of the Data Area
-
-## FAQ 
-
-### TBD
-
-## Reference
-
-### TBD

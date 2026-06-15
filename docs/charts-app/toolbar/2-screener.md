@@ -38,9 +38,6 @@ The Screener is an improved Doji Screener. It is designed surface only the most 
 2. On the left hand side of the popout, click the star
 3. The favorited saved filter will populate as a button in the Filter Area
 
-## FAQ 
-
-### TBD
 
 ## Reference
 

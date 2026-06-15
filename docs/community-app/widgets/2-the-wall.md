@@ -2,18 +2,4 @@
 
 ## Overview
 
-TBD
-
-## Guides 
-
-### TBD
-
-1. TBD
-
-## FAQ 
-
-### TBD
-
-## Reference
-
-### TBD
+A new way to share and discover trading ideas. This feature is coming soon!
