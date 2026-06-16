@@ -1,2 +1,2 @@
 # docs
-Public documentation for Https://wallstreet.io
+Public documentation for https://wallstreet.io

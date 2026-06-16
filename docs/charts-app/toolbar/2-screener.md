@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Screener is an improved Doji Screener. It is designed surface only the most relevant information for a specific stock while still allowing the user some free to explore other criterion that may be useful for evaluating a stock.
+The Screener is an improved Doji Screener. It is designed to surface only the most relevant information for a specific stock while still allowing the user some freedom to explore other criteria that may be useful for evaluating a stock.
 
 ## Guides 
 
@@ -43,7 +43,7 @@ The Screener is an improved Doji Screener. It is designed surface only the most 
 
 ### Composite columns
 
-Most columns in the Screener are composite columns meaning that multiple types of data are included, for example the "DAILY RSI" column normally includes the RSI value, but can also include "OVERBOUGHT Since (Date)" or "OVERSOLD Since (Date)" if applicable. Play with the table to see range of possible values. 
+Most columns in the Screener are composite columns meaning that multiple types of data are included, for example the "DAILY RSI" column normally includes the RSI value, but can also include "OVERBOUGHT Since (Date)" or "OVERSOLD Since (Date)" if applicable. Play with the table to see the range of possible values. 
 
 ### Filters 
 

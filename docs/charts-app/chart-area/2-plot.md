@@ -14,7 +14,7 @@ The Plot displays symbol information as a time series.
 
 ### Change the symbol (alternate)
 
-1. In Charting Tools, on left click the magnifying class icon
+1. In Charting Tools, on left click the magnifying glass icon
 2. Search for and select symbol. 
 3. The selected symbol will populate in the plot.
 
@@ -52,7 +52,7 @@ The Plot displays symbol information as a time series.
 ## Reference
 
 ### Candle intervals 
-The candle interval is how much each time each candle on the chart represents. Available intervals: 
+The candle interval is how much time each candle on the chart represents. Available intervals: 
 
 * 1 minute (1m) 
 * 2 minute (2m) 

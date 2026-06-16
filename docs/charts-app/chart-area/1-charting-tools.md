@@ -2,14 +2,14 @@
 
 ## Overview
 
-Charting tools allow the user to change the plot any number of way. After a tool is selected, then the plot is populated. Follow on actions are generally taken in the Plot.
+Charting tools allow the user to change the plot in any number of ways. After a tool is selected, then the plot is populated. Follow on actions are generally taken in the Plot.
 
 ## Guides 
 
 ### Add a drawing
 
 1. Click on Drawing tools.
-1. The drawing tools toolbar with populate on the left hand side of the Plot 
+1. The drawing tools toolbar will populate on the left hand side of the Plot 
 1. Select desired tool and begin drawing 
 
 ### Edit or remove a drawing
@@ -20,7 +20,7 @@ Charting tools allow the user to change the plot any number of way. After a tool
 
 1. Click on Chart types 
 2. Hover over desired type and star will populate on the left
-3. Click on the star and the candle type will populate in the Charting Tools area just to right of Chart types.
+3. Click on the star and the candle type will populate in the Charting Tools area just to the right of Chart types.
 
 ### Add an indicator
 
@@ -49,7 +49,7 @@ Charting tools allow the user to change the plot any number of way. After a tool
 1. Click on Indicator sets
 1. From dropdown, select desired indicator set
 1. The indicator set will populate in the chart
-1. Add or removed indicators as desired
+1. Add or remove indicators as desired
 1. Click on Indicator sets 
 1. Select "Save Indicator Sets"
 1. Follow the prompts
@@ -68,4 +68,4 @@ Charting tools allow the user to change the plot any number of way. After a tool
 An indicator set is a group of indicators that will populate on the plot as a group. Indicator sets can only be directly created or deleted. To update see [Update an Indicator](#update-an-indicator-set).
 
 ### Template 
-The template determines how many charts the user has on the plot, and how they are arranged. It supports 1 to 16 charts being view simultaneously.
+The template determines how many charts the user has on the plot, and how they are arranged. It supports 1 to 16 charts being viewed simultaneously.

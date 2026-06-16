@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Strategies tool helps the user filter Wallstreet.io's custom strategies to surface the best ones. Each custom strategy is kept up to date across multiple time frames and may be subscribed to to receive email alerts.
+The Strategies tool helps the user filter Wallstreet.io's custom strategies to surface the best ones. Each custom strategy is kept up to date across multiple time frames and may be subscribed to receive email alerts.
 
 ## Guides 
 
@@ -29,7 +29,7 @@ The Strategies tool helps the user filter Wallstreet.io's custom strategies to s
 ## Reference
 
 ### Subscribe to a strategy 
-When a user is subscribed to any strategies, they will receive a strategy digest email daily before the market closes that gives relevant summary information. The behavior can be customized from Alerts section of the Account page.
+When a user is subscribed to any strategies, they will receive a strategy digest email daily before the market closes that gives relevant summary information. The behavior can be customized from the Alerts section of the Account page.
 
 ### Tag 
 The user may only tag a strategy they are subscribed to. The tags created by a user are only visible to that user. 

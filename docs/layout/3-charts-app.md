@@ -13,7 +13,7 @@
 ### Toolbar 
 ![Charts app](../assets/screenshots/toolbar.png){ loading=lazy }
 
-* Filter Area: The Filter Area is the top section when filters / dropdowns are located.
+* Filter Area: The Filter Area is the top section where filters / dropdowns are located.
 * Data Area: The Data Area is the area below the Filter Area where filtered data will populate. 
 * All tools: 
     * [Doji Screener](../charts-app/toolbar/1-doji-screener.md)
