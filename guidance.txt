@@ -17,21 +17,16 @@ For FAQ sections
 
 
 Helpful files 
-how-to-markdown.md 
-how-to-markdown-2.md
+zensical.md 
 
 Example files: 
 1-doji-screener.md 
-2-screener.md 
-3-seasonality.md
-4-fundamentals.md
-charts-app-overview.md
 
 Useful links: 
 Live Site: https://wallstreetio.github.io/docs/
 Code Site: https://github.com/wallstreetio/docs
 
-Simple update workflow
+Simple update workflow for Leslie
 1. Go to https://wallstreetio.github.io/docs/ 
 2. Open a file in the docs folder 
 3. In the upper right, click on the pencil to edit.
@@ -39,7 +34,7 @@ Simple update workflow
 5. In the top right, click "Commit changes.."
 6. Click through prompt. Commit is the same as saving.
 
-Simple update vscode 
+Simple update vscode for Leslie
 git pull origin main = pull in new changes made from 
 zensical serve = start the development server
 click in terminal, hit Ctrl + C to stop server.

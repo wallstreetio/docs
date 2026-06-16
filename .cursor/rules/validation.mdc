@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+- Whenever an agent finishes a task run `uv run pre-commit run --all-files` and fix the issues before returning. 
