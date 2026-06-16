@@ -1,5 +1,5 @@
 
-# Welcome
+#```# Welcome
 
 Welcome to the documentation for [Wallstreet.io](https://wallstreet.io/platform), a Boutique Strategy Lab. Sign up for a [free trial](https://app.wallstreet.io/register) today! 
 
