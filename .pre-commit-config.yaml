@@ -14,3 +14,11 @@ repos:
     hooks:
       - id: codespell
         args: ['--write-changes', '--ignore-words-list=inout,te']
+  - repo: local
+    hooks:
+      - id: zensical-build
+        name: zensical build
+        description: Make sure the docs always build
+        entry: bash -c 'uv run zensical build -s'
+        language: system
+        pass_filenames: false

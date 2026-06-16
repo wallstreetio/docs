@@ -18,6 +18,3 @@ In charting tools, add comparison need to be clearer ( probably bigger and color
 Layouts don't appear to work in 4.0
 in plot, Templates which squares highlighted does not update
 In set price alert popout, add symbol label and move Condition label to correct spot
-
-message leslie 
-see how much can be automated 
