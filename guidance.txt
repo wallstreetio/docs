@@ -15,7 +15,6 @@ For FAQ sections
 * Only add an FAQ if the question has been asked at least twice. 
 * Don't add them in anticipation. If it's general information that might be helpful, then add it to the reference section
 
-
 Helpful files 
 zensical.md 
 
