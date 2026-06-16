@@ -21,6 +21,8 @@ zensical.md
 Example files: 
 1-doji-screener.md 
 
+Add sections - open the mcp, check around 
+
 Useful links: 
 Live Site: https://wallstreetio.github.io/docs/
 Code Site: https://github.com/wallstreetio/docs
