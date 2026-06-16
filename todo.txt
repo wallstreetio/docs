@@ -3,6 +3,8 @@ make pretty
     make colors look nicer - remove opacity on nav icons, change current pages in nav to better color
 investigate folding sections
 consider - most common tools section
+consider using playwright cli - https://testdino.com/blog/playwright-mcp
+
 
 Leslie todo 
 complete watchlists 
