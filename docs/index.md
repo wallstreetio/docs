@@ -5,7 +5,7 @@ Welcome to the documentation for [Wallstreet.io](https://wallstreet.io/platform)
 
 For videos with similar content, see [Micah's Video library](TBD)
 
-If you are new to Wallstreet.io, start with the [layout section](./layout/1-overviews.md) first.
+If you are new to Wallstreet.io, start with the [layout section](./layout/1-overview.md) first.
 
 Wallstreet.io has everything a trader could need to trade wisely: 
 

@@ -19,6 +19,6 @@ repos:
       - id: zensical-build
         name: zensical build
         description: Make sure the docs always build
-        entry: bash -c 'uv run zensical build'
+        entry: bash -c 'uv run zensical build -s'
         language: system
         pass_filenames: false
