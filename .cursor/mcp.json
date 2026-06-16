@@ -5,7 +5,8 @@
       "args": [
         "@playwright/mcp@latest",
         "--isolated",
-        "--storage-state=agent-workspace/cursor-auth-state.json"
+        "--storage-state=agent-workspace/cursor-auth-state.json",
+        "--viewport-size=1920,1080"
       ]
     }
   }

@@ -2,4 +2,4 @@
 alwaysApply: true
 ---
 
-- Whenever an agent finishes a task run `uv run pre-commit run --all-files` and fix the issues before returning. 
+- When in Agent or Multitask mode, before every reply run `uv run pre-commit run --all-files` and fix the issues before replying.
