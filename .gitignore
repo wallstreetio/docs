@@ -4,5 +4,6 @@
 .venv
 .pytest_cache
 .vscode
+.playwright-mcp
 __pycache__
 site
