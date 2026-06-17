@@ -30,7 +30,7 @@ Watchlists allow the user to organize symbols the user cares about, so the user 
 1. The new section divider will appear at the bottom. 
 
 ### Edit watchlist section
-* To add a symbols, drag the symbol under the section divider
+* To add a symbol, drag the symbol under the section divider
 * To add multiple symbols, drag the section divider to the top of those symbols
 
 ### TBD

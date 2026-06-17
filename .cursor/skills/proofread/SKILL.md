@@ -11,6 +11,7 @@ disable-model-invocation: true
 * Only look for typos. Don't propose any major changes.
 * Make the changes for the typos. 
 * Summarize the changes in a numbered list by file and highlighting only the change.
+* Don't run another command line spell checked. There is already a pre-commit hook for one. 
 
 ## Extra Guidance
 Wallstreet.io is Wallstreet.io not the Wallstreet.io

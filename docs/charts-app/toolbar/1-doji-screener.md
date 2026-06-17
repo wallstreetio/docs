@@ -32,7 +32,7 @@ The Doji Screener helps the user find and evaluate stocks currently experiencing
 ### Current and past data
 
 The Doji Screener intermixes realtime and past data in some columns. 
-* "HA Today" When the candle is open, the column displays that last calculated value (Yes or No). When the candle is closed, the Yes or No represents a confirmed value. Hover on columns in app for more.
+* "HA Today" When the candle is open, the column displays the last calculated value (Yes or No). When the candle is closed, the Yes or No represents a confirmed value. Hover on columns in app for more.
 
 ### Hourly candles 
 

@@ -19,7 +19,7 @@ Charting tools allow the user to change the plot in any number of ways. After a 
 ### Favorite a chart type
 
 1. Click on Chart types 
-2. Hover over desired type and star will populate on the left
+2. Hover over desired type and a star will populate on the left
 3. Click on the star and the candle type will populate in the Charting Tools area just to the right of Chart types.
 
 ### Add an indicator
@@ -30,7 +30,7 @@ Charting tools allow the user to change the plot in any number of ways. After a 
 ### Favorite an indicator
 
 1. Click on Studies & indicators 
-2. From the dropdown hover over the desired indicator and star will populate on the left 
+2. From the dropdown hover over the desired indicator and a star will populate on the left 
 3. Click on the star and the selected indicator will populate in the "Favorites" section of the dropdown.
 1. The selected indicator will also populate in the Favorites studies button
 
