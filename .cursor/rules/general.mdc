@@ -10,5 +10,4 @@ alwaysApply: true
 ## App overviews 
 * App overview located in the docs/<app-name>-app folder
 * Only a few sentences and links to 
-
-## 
+## docs/charts-app, docs/sidebar, docs/toolbar
