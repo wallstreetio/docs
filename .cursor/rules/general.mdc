@@ -7,3 +7,6 @@ alwaysApply: true
 # Guidance by section 
 ## docs/education-app/widgets 
 * Be very minimalist. Only provide a summary section then direct the user to view in app.
+## App overviews 
+* App overview located in the docs/<app-name>-app folder
+* Only a few sentences and links to 

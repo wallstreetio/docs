@@ -15,8 +15,11 @@ For FAQ sections
 * Only add an FAQ if the question has been asked at least twice. 
 * Don't add them in anticipation. If it's general information that might be helpful, then add it to the reference section
 
-Helpful files 
+Helpful files and folders 
 zensical.md 
+.cursor/rules 
+.cursor/skills
+
 
 Example files: 
 1-doji-screener.md 
@@ -53,5 +56,12 @@ playwright install-deps
 
 how to run screenshot workflow 
 uv run python -m scripts.screenshot ...
+
+how add a new section of docs
+make the file 
+Make sure their is guidance in .cursor/rules/general.mdc for the applicable 
+sections
+tell cursor to use /browse-wallstreetio to fill it out. 
+
 
 
