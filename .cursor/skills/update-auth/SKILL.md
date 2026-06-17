@@ -3,6 +3,7 @@ name: update-auth
 description: Open browser log in to wallstreet.io. Save credentials. 
 disable-model-invocation: true
 ---
+# Update auth
 
 ## Instructions 
 

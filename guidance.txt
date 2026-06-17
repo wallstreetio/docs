@@ -8,7 +8,7 @@ For Guides sections:
 * Only add a guide if multiple steps are involved.
 * Don't add guide steps for filling out prompts.
 * don't repeat steps between guides. If you find yourself repeating steps a lot, then add a guide for just that action. 
-* The guid subsections should be singular unless specifically plural, eg  Add a stock to watch list 
+* The guide subsections should be singular unless specifically plural, eg  Add a stock to watch list 
 
 
 For FAQ sections
@@ -20,8 +20,6 @@ zensical.md
 
 Example files: 
 1-doji-screener.md 
-
-Add sections - open the mcp, check around 
 
 Useful links: 
 Live Site: https://wallstreetio.github.io/docs/
