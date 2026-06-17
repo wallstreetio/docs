@@ -3,7 +3,7 @@ icon: bootstrap/workspace-charts
 ---
 
 # Overview
-The Charts app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when it's time to trade.
+The Charts app has all the tools a technical analysis trader could need to discover new strategies, evaluate those strategies, and be alerted when it's time to trade.
 
 ## Components
 * Chart Area: 
@@ -13,7 +13,7 @@ The Charts app has all the tools a technical analysis trader could need to disco
     * [Watchlists](./sidebar/1-watchlist.md)
     * [Chatroom](./sidebar/2-chatroom.md)
     * [Alerts](./sidebar/3-alerts.md)
-* Toolbar: bespoke tools for discovering and evaluating opportunities often used with the chart, but sometimes on their own.
+* Toolbar: Bespoke tools for discovering and evaluating opportunities, often used with the chart, but sometimes on their own.
     * [Doji Screener](./toolbar/1-doji-screener.md)
     * [Screener (Beta)](./toolbar/2-screener.md)
     * [Seasonality](./toolbar/3-seasonality.md)
