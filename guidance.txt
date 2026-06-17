@@ -2,7 +2,7 @@ General
 * Don't use you, use the user. 
 * Don't repeat yourself multiple times in different sections. Use "For more see link.", and link to the best section for the information to live. 
 * When referring to specific components, use text from the app, quoted it, and write the text as it appears in app, eg click on "ALL STOCKS" or ensure on "Current Stock" is selected.
-* When referring to a labelled icon, write text as it appears but not quoted eg Drawing tools
+* When referring to a icon, write text as it appears but not quoted eg Drawing tools. If the icon label is not visible use the on hover text.
 
 For Guides sections: 
 * Only add a guide if multiple steps are involved.

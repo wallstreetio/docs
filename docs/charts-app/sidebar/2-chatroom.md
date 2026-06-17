@@ -2,18 +2,12 @@
 
 ## Overview
 
-TBD
+The Chatroom sidebar lets the user join live community discussions without leaving the chart. The user can post messages, browse multiple chatrooms, and follow conversations tied to WallStreet.io shows.
 
-## Guides 
+## Guides
 
-### TBD
-
-1. TBD
-
-## FAQ 
+## FAQ
 
 ### TBD
 
 ## Reference
-
-### TBD

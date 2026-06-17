@@ -6,13 +6,13 @@ The Doji Screener helps the user find and evaluate stocks currently experiencing
 
 ## Guides 
 
-### Set price alerts
+### Set Price Alerts
 
 1. Select one or more stocks using the checkbox on the left 
 1. From green action bar, select "Create Price Alerts" 
 1. Follow the prompts
 
-### Add stock to watchlist
+### Add stock to Watchlist
 
 1. Select one or more stocks using the checkbox on the left 
 1. From green action bar, select "Add to Watchlist" 

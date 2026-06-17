@@ -2,7 +2,10 @@
 alwaysApply: true
 ---
 
-- Use agent-workspace for scratch space. If a file that you create does not have an obvious place, then put it here.
+* Use agent-workspace for scratch space. If a file that you create does not have an obvious place, then put it here.
+* Be very judicious about what you add. If it is clear in app, then don't add it unless it provides clear value. Add it in both place means it must be kept up to date
+* Don't use you, use the user. 
+* When referring to specific components, use text from the app, quoted it, and write the text as it appears in app, eg click on "ALL STOCKS" or ensure on "Current Stock" is selected.
 
 # Guidance by section 
 ## docs/education-app/widgets, docs/community/widgets
@@ -10,4 +13,7 @@ alwaysApply: true
 ## App overviews 
 * App overview located in the docs/<app-name>-app folder
 * Only a few sentences and links to 
-## docs/charts-app, docs/sidebar, docs/toolbar
+## docs/charts-app, docs/sidebar, docs/toolbar 
+* Assume the user has the correct section already open ie if the section is a guide is in chatroom, assume the chatroom widget in the sidebar is already open.
+* Only add a guide procedure if multiple steps are involved.
+* The guide subsections should be singular unless specifically plural, eg  Add a stock to watch list 
