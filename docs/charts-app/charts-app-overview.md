@@ -3,7 +3,7 @@ icon: bootstrap/workspace-charts
 ---
 
 # Overview
-The Chart app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when it's time to trade.
+The Charts app has all the tools a technical analysis trader could need to discover new strategies, evaluate those new strategies, and be alerted when it's time to trade.
 
 ## Components
 The chart is made up of three components, each one holding similar things. 

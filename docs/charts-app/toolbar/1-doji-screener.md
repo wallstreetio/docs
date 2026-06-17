@@ -8,20 +8,20 @@ The Doji Screener helps the user find and evaluate stocks currently experiencing
 
 ### Set price alerts
 
-1. Select one or more stocks using checkbox on left 
+1. Select one or more stocks using the checkbox on the left 
 1. From green action bar, select "Create Price Alerts" 
 1. Follow the prompts
 
 ### Add stock to watchlist
 
-1. Select one or more stocks using checkbox on left 
+1. Select one or more stocks using the checkbox on the left 
 1. From green action bar, select "Add to Watchlist" 
 1. Follow the prompts 
 
 
 ## FAQ 
 
-** This is an example faq, not real. **
+** This is an example FAQ, not real. **
 ### Live data 
 * Is the doji screener realtime? 
 * The doji screener is almost realtime. We update it every few minutes when the market is open. In the Filter Area, see "Last updated ..." for exactly how up to date it is.

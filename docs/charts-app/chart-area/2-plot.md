@@ -24,7 +24,7 @@ The Plot displays symbol information as a time series.
 3. The selected interval will populate in the plot.
 
 ### Access shortcut actions 
-1. Right click on the Plot
+1. Right-click on the Plot
 1. Select shortcut action. Available shortcut options: 
 
     * "Reset Chart View"
@@ -37,11 +37,11 @@ The Plot displays symbol information as a time series.
 1. Follow the prompt
 
 ### Edit a drawing
-1. Right click on drawing
+1. Right-click on drawing
 1. Use dropdown to edit desired aspects. 
 
 ## Delete a drawing 
-1. Right click on drawing 
+1. Right-click on drawing 
 1. Click "Delete Drawing"
 
 ## Delete a drawing (alternate)
@@ -67,4 +67,4 @@ The candle interval is how much time each candle on the chart represents. Availa
 * 1 month (1M) 
 
 ### Shortcut actions 
-To view Shortcut actions right click on the Plot. The "Remove Chart" option is only relevant if multiple charts are displayed. It removes the selected chart.
+To view Shortcut actions, right-click on the Plot. The "Remove Chart" option is only relevant if multiple charts are displayed. It removes the selected chart.
