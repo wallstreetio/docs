@@ -36,7 +36,7 @@ The Doji Screener intermixes realtime and past data in some columns.
 
 ### Hourly candles 
 
-Since hourly candles can close quickly, the Doji Screener shows the values for closed candle for a few minutes after the actual close. 
+Since hourly candles can close quickly, the Doji Screener shows the values for a closed candle for a few minutes after the actual close. 
 
 ### Date Range filter
 

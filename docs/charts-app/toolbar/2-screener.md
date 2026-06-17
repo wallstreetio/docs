@@ -47,4 +47,4 @@ Most columns in the Screener are composite columns meaning that multiple types o
 
 ### Filters 
 
-Filters are filtering the data  even if columns are not displayed in table.
+Filters are filtering the data even if columns are not displayed in the table.

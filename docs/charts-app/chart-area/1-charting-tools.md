@@ -2,7 +2,7 @@
 
 ## Overview
 
-Charting tools allow the user to change the plot in any number of ways. After a tool is selected, then the plot is populated. Follow on actions are generally taken in the Plot.
+Charting tools allow the user to change the plot in any number of ways. After a tool is selected, then the plot is populated. Follow-on actions are generally taken in the Plot.
 
 ## Guides 
 
@@ -32,7 +32,7 @@ Charting tools allow the user to change the plot in any number of ways. After a 
 1. Click on Studies & indicators 
 2. From the dropdown hover over the desired indicator and star will populate on the left 
 3. Click on the star and the selected indicator will populate in the "Favorites" section of the dropdown.
-1. The selected indicator will also populate in Favorites studies button
+1. The selected indicator will also populate in the Favorites studies button
 
 ### Create an indicator set 
 1. Add an indicator to the Plot 
@@ -65,7 +65,7 @@ Charting tools allow the user to change the plot in any number of ways. After a 
 ## Reference
 
 ### Indicator set 
-An indicator set is a group of indicators that will populate on the plot as a group. Indicator sets can only be directly created or deleted. To update see [Update an Indicator](#update-an-indicator-set).
+An indicator set is a group of indicators that will populate on the plot as a group. Indicator sets can only be directly created or deleted. To update, see [Update an indicator set](#update-an-indicator-set).
 
 ### Template 
 The template determines how many charts the user has on the plot, and how they are arranged. It supports 1 to 16 charts being viewed simultaneously.

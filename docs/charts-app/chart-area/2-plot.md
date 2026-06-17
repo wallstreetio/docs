@@ -21,7 +21,7 @@ The Plot displays symbol information as a time series.
 ### Change interval
 1. In upper left click the current interval
 2. From dropdown select desired interval
-3. Available
+3. The selected interval will populate in the plot.
 
 ### Access shortcut actions 
 1. Right click on the Plot

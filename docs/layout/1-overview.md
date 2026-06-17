@@ -1,6 +1,6 @@
 # Overview
 
-The Wallstreet.io has three distinct apps, each with its own layout and purpose:
+Wallstreet.io has three distinct apps, each with its own layout and purpose:
 
 * [Charts](./3-charts-app.md)
 * [Education](./4-education-app.md)
