@@ -6,6 +6,13 @@
   }
 }
 
+[dir=ltr] .md-typeset .md-input,
+[dir=rtl] .md-typeset .md-input {
+  border-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
 .md-typeset textarea.md-input {
   font-family: inherit;
   height: auto;
@@ -14,7 +21,6 @@
   resize: vertical;
   border: 0;
   border-bottom: 0.1rem solid var(--md-default-fg-color--lighter);
-  border-radius: 0.1rem 0.1rem 0 0;
   outline: none;
 }
 
