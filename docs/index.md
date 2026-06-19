@@ -21,5 +21,19 @@ Wallstreet.io has everything a trader could need to trade wisely:
 
 ## Report an issue
 
-
+<form action="https://example.com/feedback" method="POST">
+  <p>
+    <label for="page-url">Page URL</label><br>
+    <input type="url" id="page-url" name="url" class="md-input md-input--stretch" required >
+  </p>
+  <p>
+    <label for="username">Wallstreet.io username</label><br>
+    <input type="text" id="username" name="username" class="md-input md-input--stretch" required >
+  </p>
+  <p>
+    <label for="description">Description of issue</label><br>
+    <textarea id="description" name="description" class="md-input md-input--stretch" required rows="5" minlength="10" title="Description must be at least 10 characters" ></textarea>
+  </p>
+  <button type="submit" class="md-button md-button--primary">Submit</button>
+</form>
 

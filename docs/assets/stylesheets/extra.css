@@ -1,7 +1,35 @@
-:root  > * {
+:root > * {
   /* --md-default-bg-color: #30423D; */
   /* --md-default-fg-color: #30423D; */
   .navbar-icon-color {
-  color: #6FCF97;
+    color: #6fcf97;
   }
+}
+
+.md-typeset textarea.md-input {
+  font-family: inherit;
+  height: auto;
+  min-height: 8rem;
+  padding-block: 0.6rem;
+  resize: vertical;
+  border: 0;
+  border-bottom: 0.1rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.1rem 0.1rem 0 0;
+  outline: none;
+}
+
+.md-typeset .md-input:invalid {
+  outline: none;
+  box-shadow: var(--md-shadow-z1);
+  border-bottom-color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .md-input:invalid:focus,
+.md-typeset .md-input:invalid:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+  box-shadow: var(--md-shadow-z2);
+}
+
+.md-typeset .md-input:user-invalid {
+  border-bottom-color: #ff5252;
 }
