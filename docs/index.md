@@ -3,7 +3,7 @@
 
 Welcome to the documentation for [Wallstreet.io](https://wallstreet.io/platform), a Boutique Strategy Lab. Sign up for a [free trial](https://app.wallstreet.io/register) today! 
 
-For videos with similar content, see Micah's Video library(coming soon!)
+For videos with similar content, see Micah's Video library (coming soon!)
 
 If you are new to Wallstreet.io, start with the [layout section](./layout/1-overview.md) first.
 
