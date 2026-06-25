@@ -25,7 +25,7 @@ Wallstreet.io has everything a trader could need to trade wisely:
 <form action="https://wallstreet.io/docs/feedback" method="POST" data-feedback-form>
   <p>
     <label for="page-url">Page URL</label><br>
-    <input type="url" id="page-url" name="url" class="md-input md-input--stretch" required >
+    <input type="url" id="page-url" name="page-url" class="md-input md-input--stretch" required >
   </p>
   <p>
     <label for="username">Wallstreet.io username</label><br>
