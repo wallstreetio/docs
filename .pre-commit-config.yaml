@@ -14,6 +14,7 @@ repos:
     hooks:
       - id: codespell
         args: ['--write-changes', '--ignore-words-list=inout,te']
+        exclude: '^docs/assets/(vendor/|javascript/hero\.js$)'
   - repo: local
     hooks:
       - id: zensical-build

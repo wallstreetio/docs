@@ -1,0 +1,231 @@
+/* =========================================================================
+   Homepage cinematic hero (strange-attractor background).
+   Markup lives in overrides/home.html (block hero); the WebGL engine lives in
+   assets/javascript/hero.js. Everything is scoped under .wsio-hero so it can't
+   leak into the rest of the Material theme.
+   ========================================================================= */
+
+:root {
+  /* WSIO palette (mirrors angular/src/styles/palette.scss) */
+  --wsio-black-1: #0a0c0e;
+  --wsio-black-2: #19191f;
+  --wsio-charcoal: #a9a6b8;
+  --wsio-charcoal-2: #69667d;
+  --wsio-charcoal-3: #3a3946;
+  --wsio-green-50: #e1f7f0;
+  --wsio-green-300: #50d0a9;
+  --wsio-green-400: #2bc696;
+  --wsio-green-500: #05bc84;
+  --wsio-green-700: #04ad71;
+  --wsio-green-900: #019754;
+  --wsio-green-a200: #8fffc6;
+  --wsio-green-a400: #5cffac;
+  --wsio-green-a700: #42ff9f;
+  --wsio-negative: #ff6442;
+}
+
+/* The stage: fills the first screen below the (kept) top nav. */
+.wsio-hero {
+  position: relative;
+  /* Own stacking context: keeps the hero's internal layers (vignette/grain/copy
+     at z-index 5/6/10) contained, so they can't paint over the mobile nav
+     drawer / its overlay (z-index 5) or the sticky header (z-index 4). Without
+     this, the hero copy card sat *above* the open drawer. */
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - var(--wsio-header-h, 3rem));
+  min-height: 30rem;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    var(--wsio-black-2) 0%,
+    var(--wsio-black-1) 65%,
+    #050608 100%
+  );
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+}
+
+.wsio-hero #attractor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.wsio-hero #attractor canvas {
+  display: block;
+  pointer-events: none;
+}
+
+/* Subtle film-grain + vignette overlays. */
+.wsio-hero .vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  mix-blend-mode: multiply;
+}
+.wsio-hero .grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* Copy geared bottom-left, zensical-style. */
+.wsio-hero .hero {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+.wsio-hero .hero-scrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 62%;
+  background: linear-gradient(
+    to top,
+    rgba(8, 10, 12, 0.88) 0%,
+    rgba(8, 10, 12, 0.55) 26%,
+    rgba(8, 10, 12, 0) 100%
+  );
+}
+.wsio-hero .hero-content {
+  position: relative;
+  text-align: left;
+  margin: 0 0 6vh 5vw;
+  max-width: 540px;
+  padding: 26px 30px 28px;
+  background: rgba(12, 14, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.wsio-hero .hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(5, 188, 132, 0.07);
+  border: 1px solid rgba(5, 188, 132, 0.22);
+  color: var(--wsio-green-300);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.wsio-hero .hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(34px, 4.6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: #f3fff8;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+}
+.wsio-hero .hero h1 em {
+  font-style: normal;
+  background: linear-gradient(
+    135deg,
+    var(--wsio-green-a200) 0%,
+    var(--wsio-green-500) 60%,
+    var(--wsio-green-700) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.wsio-hero .hero-sub {
+  margin: 0 0 24px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: var(--wsio-charcoal);
+  line-height: 1.5;
+}
+.wsio-hero .hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  pointer-events: auto;
+}
+.wsio-hero .hero-cta {
+  display: inline-block;
+  background: var(--wsio-green-500);
+  color: #001f12;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.wsio-hero .hero-cta:hover {
+  background: var(--wsio-green-300);
+  transform: translateY(-1px);
+}
+.wsio-hero .hero-cta.ghost {
+  background: transparent;
+  color: #eafff5;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.wsio-hero .hero-cta.ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 720px) {
+  .wsio-hero .hero-content {
+    margin: 0 16px 4vh;
+    padding: 20px 22px 22px;
+    max-width: none;
+  }
+  .wsio-hero .hero h1 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+}
+
+/* Homepage is the hero and nothing else: collapse the (empty) content column
+   so the landing is exactly one screen with no trailing gap. We must NOT hide
+   `.md-main` itself — the mobile nav drawer (`.md-sidebar--primary`) lives
+   inside it, so `display:none` on this ancestor would make the hamburger menu
+   open nothing. Hiding the content column keeps the drawer working. */
+body:has(.wsio-hero) .md-content {
+  display: none;
+}
+body:has(.wsio-hero) .md-main {
+  min-height: 0;
+}
+body:has(.wsio-hero) .md-main__inner {
+  margin-top: 0;
+}
+body:has(.wsio-hero) .md-footer {
+  display: none;
+}
+
+/* Hide the light/dark theme toggle on the homepage only. The cinematic hero is
+   always dark, so a "switch to light" control there would clash with it — but
+   the toggle stays available on every content page. */
+body:has(.wsio-hero) [data-md-component="palette"] {
+  display: none;
+}
+
+/* The theme reserves a scrollbar track on <html> (`scrollbar-gutter: stable`)
+   to avoid layout shift on scrollable pages. The hero never scrolls, so that
+   reserved track just shows a white strip on the right against the dark hero.
+   Reclaim it on the landing only (content pages keep the stable gutter). */
+html:has(.wsio-hero) {
+  scrollbar-gutter: auto;
+}
