@@ -11,10 +11,15 @@ document.addEventListener("submit", (event) => {
 
   const data = Object.fromEntries(new FormData(form));
   fetch(form.action, {
-    method: form.method || "POST",
-    headers: { "Content-Type": "application/json" },
+    method: form.method,
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
     body: JSON.stringify(data),
-  }).catch(() => {});
+  }).catch((error) => {
+    console.error("Feedback submission failed:", error);
+  });
 
   container.innerHTML = "<p>Thank you for your feedback!</p>";
 });
