@@ -19,14 +19,6 @@ The Doji Screener helps the user find and evaluate stocks currently experiencing
 1. Follow the prompts 
 
 
-## FAQ 
-
-** This is an example FAQ, not real. **
-### Live data 
-* Is the doji screener realtime? 
-* The doji screener is almost realtime. We update it every few minutes when the market is open. In the Filter Area, see "Last updated ..." for exactly how up to date it is.
-
-
 ## Reference
 
 ### Current and past data
