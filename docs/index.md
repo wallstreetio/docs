@@ -20,9 +20,8 @@ Wallstreet.io has everything a trader could need to trade wisely:
 * Named components of the app are capitalized when they are referred to. See how Doji Screener is capitalized in the [reference section](./charts-app/toolbar/1-doji-screener.md#hourly-candles). 
 
 ## Report an issue
-
 <div data-feedback-form-container>
-<form action="https://wallstreet.io/docs/feedback" method="POST" data-feedback-form>
+<form action="{{ feedback_form_url }}/docs/feedback" method="POST" data-feedback-form>
   <p>
     <label for="page-url">Page URL</label><br>
     <input type="url" id="page-url" name="page-url" class="md-input md-input--stretch" required >
