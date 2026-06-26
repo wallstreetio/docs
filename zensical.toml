@@ -86,10 +86,12 @@ nav = [
   ]},
   { "Layout" = [
     "layout/1-overview.md",
-    "layout/2-app-account-bar.md",
-    "layout/3-charts-app.md",
-    "layout/4-education-app.md",
-    "layout/5-community-app.md",
+    { "Details" = [
+      "layout/details/2-app-account-bar.md",
+      "layout/details/3-charts-app.md",
+      "layout/details/4-education-app.md",
+      "layout/details/5-community-app.md",
+    ]}, 
   ]},
 ]
 
