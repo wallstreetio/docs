@@ -10,7 +10,7 @@ Need a hand? We're here to help.
 ## Report an issue
 
 <div data-feedback-form-container>
-<form action="https://wallstreet.io/docs/feedback" method="POST" data-feedback-form>
+<form action="{{ feedback_form_url }}/docs/feedback" method="POST" data-feedback-form>
   <p>
     <label for="page-url">Page URL</label><br>
     <input type="url" id="page-url" name="page-url" class="md-input md-input--stretch" required >

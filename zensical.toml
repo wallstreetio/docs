@@ -28,6 +28,7 @@ site_author = "Aaron Lamar"
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 #site_url = "https://www.example.com/"
+watch = ["macros.py"]
 
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
@@ -46,53 +47,58 @@ site_dir="site"
 #
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
-  { "Home" = "index.md" },
-  { "Welcome" = "welcome.md" },
-  { "Charts app" = [
-    "charts-app/charts-app-overview.md",
-    { "Chart Area" = [
-      "charts-app/chart-area/1-charting-tools.md",
-      "charts-app/chart-area/2-plot.md",
+    { "Home" = "index.md" },
+    { "Welcome" = "welcome.md" },
+    { "Charts app" = [
+        "charts-app/charts-app-overview.md",
+        { "Chart Area" = [
+            "charts-app/chart-area/1-charting-tools.md",
+            "charts-app/chart-area/2-plot.md",
+        ]},
+        { "Sidebar" = [
+            "charts-app/sidebar/1-watchlist.md",
+            "charts-app/sidebar/2-chatroom.md",
+            "charts-app/sidebar/3-alerts.md",
+        ]},
+        { "Toolbar" = [
+            "charts-app/toolbar/1-doji-screener.md",
+            "charts-app/toolbar/2-screener.md",
+            "charts-app/toolbar/3-seasonality.md",
+            "charts-app/toolbar/4-fundamentals.md",
+            "charts-app/toolbar/5-strategies.md",
+            "charts-app/toolbar/6-strategy-builder.md",
+        ]},
     ]},
-    { "Sidebar" = [
-      "charts-app/sidebar/1-watchlist.md",
-      "charts-app/sidebar/2-chatroom.md",
-      "charts-app/sidebar/3-alerts.md",
+    { "Education app" = [
+        "education-app/1-education-app-overview.md",
+        { "Widgets" = [
+            "education-app/widgets/2-getting-started.md",
+            "education-app/widgets/3-roadmaps.md",
+            "education-app/widgets/4-wheel-strategy.md",
+            "education-app/widgets/5-trade-prodigy.md",
+        ]},
     ]},
-    { "Toolbar" = [
-      "charts-app/toolbar/1-doji-screener.md",
-      "charts-app/toolbar/2-screener.md",
-      "charts-app/toolbar/3-seasonality.md",
-      "charts-app/toolbar/4-fundamentals.md",
-      "charts-app/toolbar/5-strategies.md",
-      "charts-app/toolbar/6-strategy-builder.md",
+    { "Community app" = [
+        "community-app/1-community-app-overview.md",
+        { "Widgets" = [
+            "community-app/widgets/2-the-wall.md",
+            "community-app/widgets/3-live-streams.md",
+            "community-app/widgets/4-chat-rooms.md",
+        ]},
     ]},
-  ]},
-  { "Education app" = [
-    "education-app/1-education-app-overview.md",
-    { "Widgets" = [
-      "education-app/widgets/2-getting-started.md",
-      "education-app/widgets/3-roadmaps.md",
-      "education-app/widgets/4-wheel-strategy.md",
-      "education-app/widgets/5-trade-prodigy.md",
+    { "Layout" = [
+        "layout/1-overview.md",
+        { "Details" = [
+            "layout/details/2-app-account-bar.md",
+            "layout/details/3-charts-app.md",
+            "layout/details/4-education-app.md",
+            "layout/details/5-community-app.md",
+        ]},
     ]},
-  ]},
-  { "Community app" = [
-    "community-app/1-community-app-overview.md",
-    { "Widgets" = [
-      "community-app/widgets/2-the-wall.md",
-      "community-app/widgets/3-live-streams.md",
-      "community-app/widgets/4-chat-rooms.md",
+    { "Other Topics" = [
+        "other-topics/1-overview.md",
     ]},
-  ]},
-  { "Layout" = [
-    "layout/1-overview.md",
-    "layout/2-app-account-bar.md",
-    "layout/3-charts-app.md",
-    "layout/4-education-app.md",
-    "layout/5-community-app.md",
-  ]},
-  { "Support" = "support.md" },
+    { "Support" = "support.md" },
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
@@ -401,3 +407,6 @@ combine_header_slug = true
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
 [project.markdown_extensions.pymdownx.tilde]
+
+[project.markdown_extensions.zensical.extensions.macros]
+module_name = "macros"
