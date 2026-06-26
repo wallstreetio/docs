@@ -5,7 +5,7 @@ Need a hand? We're here to help.
 * **Found a problem in the docs or the app?** Use the quick form below and we'll take a look.
 * **Account, billing, or general questions?** Reach the team directly.
 
-[Contact support](https://wallstreet.io/contact){ .md-button .md-button--primary }
+[Contact support](https://wallstreet.io/contact){ .md-button .md-button--primary target="_blank" rel="noopener" }
 
 ## Report an issue
 

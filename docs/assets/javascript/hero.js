@@ -1035,8 +1035,8 @@ export function buildHero(root) {
   // REGIME LIFECYCLE — cold-start, retract, swap
   // =====================================================================
 
-  // v4.5: extracted regime-set logic so both auto-cycle (`swapRegime`) and
-  // manual hotkey jumps (`jumpToRegime`) share the same cold-start.
+  // v4.5: extracted regime-set logic so the auto-cycle (`swapRegime`) runs a
+  // consistent cold-start each time a regime begins.
   function setRegime(newIdx) {
     regimeIdx = ((newIdx % REGIMES.length) + REGIMES.length) % REGIMES.length;
     activeRegime = REGIMES[regimeIdx];
@@ -1070,41 +1070,6 @@ export function buildHero(root) {
   function swapRegime() {
     setRegime(regimeIdx + 1);
   }
-
-  // Manual hotkey skip: jump straight to a specific regime index.
-  function jumpToRegime(idx) {
-    setRegime(idx);
-  }
-
-  // =====================================================================
-  // HOTKEYS — preview/skip without waiting for the auto-cycle.
-  //   1 / 2 / 3 / 4   jump straight to that regime (uses display order)
-  //   →  / N           skip to next regime
-  //   ←  / P           skip to previous regime
-  // =====================================================================
-  const _onKeydown = (e) => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    switch (e.key) {
-      case '1': jumpToRegime(0); break;
-      case '2': jumpToRegime(1); break;
-      case '3': jumpToRegime(2); break;
-      case '4': jumpToRegime(3); break;
-      case 'ArrowRight':
-      case 'n':
-      case 'N':
-        jumpToRegime(regimeIdx + 1);
-        break;
-      case 'ArrowLeft':
-      case 'p':
-      case 'P':
-        jumpToRegime(regimeIdx - 1);
-        break;
-      default: return;
-    }
-    e.preventDefault();
-  };
-  window.addEventListener('keydown', _onKeydown);
-  _cleanups.push(() => window.removeEventListener('keydown', _onKeydown));
 
   // Pause rendering when the hero scrolls out of view to save the GPU.
   const _io = new IntersectionObserver(

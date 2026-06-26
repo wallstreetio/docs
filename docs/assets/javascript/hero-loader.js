@@ -22,9 +22,15 @@ function onPage() {
   const root = document.getElementById("attractor");
   document.body.classList.toggle("wsio-home", !!root);
 
+  // Respect users who've asked for reduced motion: skip the animated WebGL
+  // hero entirely and let the CSS gradient backdrop stand in for it.
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   if (root) {
     measureHeader();
-    if (!root.dataset.heroReady) {
+    if (!reduceMotion && !root.dataset.heroReady) {
       root.dataset.heroReady = "1";
       import(new URL("./hero.js", import.meta.url))
         .then((mod) => {
