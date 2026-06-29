@@ -3,7 +3,7 @@
     "playwright": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest",
+        "playwright-mcp",
         "--isolated",
         "--storage-state=agent-workspace/cursor-auth-state.json",
         "--viewport-size=1920,1080"

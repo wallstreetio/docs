@@ -7,3 +7,4 @@
 .playwright-mcp
 __pycache__
 site
+node_modules
