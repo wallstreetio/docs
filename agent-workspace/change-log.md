@@ -13,3 +13,8 @@
 ### end commit: 7d1f75a74
 ### summary:
 * No visible UI changes since 4fc192971; no doc updates needed.
+
+## Entry 2026-06-29
+### end commit: 759ee73fe
+### summary:
+* Community watchlist creators now see the color-tag visibility eyeball; minor visibility fix, no doc updates needed.
