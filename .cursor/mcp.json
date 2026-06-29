@@ -8,6 +8,9 @@
         "--storage-state=agent-workspace/cursor-auth-state.json",
         "--viewport-size=1920,1080"
       ]
+    },
+    "intercom": {
+      "url": "https://mcp.intercom.com/mcp"
     }
   }
 }
