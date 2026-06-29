@@ -17,23 +17,3 @@ Wallstreet.io has everything a trader could need to trade wisely:
 * If in doubt in app, then **hover on the icon** and a name of the icon or directions will appear. Icons / locations / sections are referred to by visible name if present or their on hover name otherwise.
 * Quotes are use to enclose text if it appears directly in the app. See [Set Price Alerts](./charts-app/toolbar/1-doji-screener.md#set-price-alerts) for more.
 * Named components of the app are capitalized when they are referred to. See how Doji Screener is capitalized in the [reference section](./charts-app/toolbar/1-doji-screener.md#hourly-candles). 
-
-## Report an issue
-
-<div data-feedback-form-container>
-<form action="{{ feedback_form_url }}/docs/feedback" method="POST" data-feedback-form>
-  <p>
-    <label for="page-url">Page URL</label><br>
-    <input type="url" id="page-url" name="page-url" class="md-input md-input--stretch" required >
-  </p>
-  <p>
-    <label for="username">Wallstreet.io username</label><br>
-    <input type="text" id="username" name="username" class="md-input md-input--stretch" required >
-  </p>
-  <p>
-    <label for="description">Description of issue</label><br>
-    <textarea id="description" name="description" class="md-input md-input--stretch" required rows="5" minlength="10" title="Description must be at least 10 characters" ></textarea>
-  </p>
-  <button type="submit" class="md-button md-button--primary">Submit</button>
-</form>
-</div>
