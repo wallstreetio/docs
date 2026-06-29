@@ -32,15 +32,3 @@ Watchlists allow the user to organize symbols the user cares about, so the user 
 ### Edit watchlist section
 * To add a symbol, drag the symbol under the section divider
 * To add multiple symbols, drag the section divider to the top of those symbols
-
-### TBD
-
-1. TBD
-
-## FAQ 
-
-### TBD
-
-## Reference
-
-### TBD

@@ -18,6 +18,7 @@ The Doji Screener helps the user find and evaluate stocks currently experiencing
 1. From green action bar, select "Add to Watchlist" 
 1. Follow the prompts 
 
+
 ## Reference
 
 ### Current and past data

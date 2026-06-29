@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{#
+  Homepage template. Keeps the standard Material header (top nav) and renders a
+  full-bleed cinematic hero in the `hero` block — which sits inside md-container,
+  above the main grid, so the top nav stays put. The page's markdown (Welcome,
+  links, report form) renders normally below the hero.
+#}
+
+{% block hero %}
+  <section class="wsio-hero" aria-label="{{ config.site_name }}">
+    <div id="attractor"></div>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+
+    <div class="hero">
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
+        <div class="hero-badge">Wallstreet.io Docs</div>
+        <h1>Everything you need to <em>trade wisely</em>.</h1>
+        <p class="hero-sub">
+          Guides, references, and walkthroughs for the Charts, Community, and
+          Education apps.
+        </p>
+        <div class="hero-actions">
+          <a class="hero-cta" href="{{ 'layout/1-overview/' | url }}">Get started</a>
+          <a class="hero-cta ghost" href="https://app.wallstreet.io" target="_blank" rel="noopener">Open the app</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{# Homepage is the hero only — suppress the article body so an empty index.md
+   doesn't render a stray heading / empty content column below the hero. #}
+{% block content %}{% endblock %}
+
+{# ...and drop the page footer (prev/next nav + copyright) on the landing. #}
+{% block footer %}{% endblock %}

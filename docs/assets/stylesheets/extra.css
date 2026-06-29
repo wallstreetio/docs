@@ -6,6 +6,153 @@
   }
 }
 
+/* =========================================================================
+   Dark, zensical-style top nav (header + tabs).
+   The "modern" theme variant ignores the palette `primary` color, so we tint
+   the header directly. The logo wordmark + header icons use `currentColor`,
+   so setting a light foreground recolors them automatically.
+   ========================================================================= */
+.md-header {
+  /* Deep near-black like zensical. Dropping `saturate()` and raising opacity
+     kills the grey-green cast the bright hero swirl used to bleed through. */
+  background-color: rgba(10, 11, 14, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.md-header,
+.md-header__title,
+.md-tabs {
+  color: #eef1f5;
+}
+.md-logo svg {
+  color: #eef1f5;
+}
+
+/* Vertically align the brand wordmark with the "Documentation" title. The
+   wordmark's text glyphs live in the lower half of its SVG viewBox (the icon
+   mark fills the top), so the centered logo makes "Wallstreet.io" sit ~4px below
+   the centered title. Lift the header logo so the wordmark text shares the
+   title's baseline. Scoped to the header logo only, so the mobile title (where
+   the wordmark is hidden) stays centered next to the hamburger. */
+.md-header__button.md-logo svg {
+  transform: translateY(-4px);
+}
+
+/* Horizontal section tabs sitting under the header. */
+.md-tabs {
+  background-color: transparent;
+}
+.md-tabs__link {
+  color: #eef1f5;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Search: the header trigger is a `.md-search__button` pill (its magnifier icon
+   and "Ctrl+K" hint are pseudo-elements that inherit `currentColor`). The theme
+   default is a near-black-on-white pill, which reads as a light-grey box on our
+   dark header — so tint it to a translucent dark pill with light text instead. */
+.md-search__button {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(238, 241, 245, 0.7);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.md-search__button:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+  color: #eef1f5;
+}
+/* The "Ctrl+K" hint is a `::after` keycap. The theme default gives it a near-
+   white fill with light text (designed for a light header), which reads as a
+   washed-out blob on our dark header. Make it a subtle dark keycap instead. */
+.md-search__button::after {
+  background-color: rgba(255, 255, 255, 0.09);
+  color: rgba(238, 241, 245, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Brand the primary buttons (Contact support, the report-issue Submit, etc.)
+   WSIO green to match the hero CTAs, instead of Material's default indigo. The
+   green vars are defined in hero.css :root (loaded site-wide). */
+.md-typeset .md-button--primary {
+  background-color: var(--wsio-green-500, #05bc84);
+  border-color: var(--wsio-green-500, #05bc84);
+  color: #001f12;
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: var(--wsio-green-300, #50d0a9);
+  border-color: var(--wsio-green-300, #50d0a9);
+  color: #001f12;
+}
+
+/* =========================================================================
+   Footer: copyright centered inside the prev/next nav row (see
+   overrides/partials/footer.html), instead of a separate strip below. A
+   3-column grid keeps the copyright optically centered no matter how wide the
+   prev/next labels are.
+   ========================================================================= */
+.md-footer__inner.md-footer__inner--meta {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  margin-top: 0;
+}
+.md-footer__inner--meta .md-footer__link {
+  width: auto;
+  padding: 0.6rem 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.md-footer__inner--meta .md-footer__link:hover {
+  opacity: 1;
+}
+.md-footer__inner--meta .md-footer__link--prev {
+  grid-column: 1;
+  justify-self: start;
+}
+.md-footer__inner--meta .md-footer__link--next {
+  grid-column: 3;
+  justify-self: end;
+}
+.md-footer__inner--meta .md-footer__meta {
+  grid-column: 2;
+  text-align: center;
+}
+.md-footer__inner--meta .md-footer__meta .md-copyright {
+  margin: 0 auto;
+  text-align: center;
+}
+/* Empty placeholders just hold the side columns when a page has no prev/next. */
+.md-footer__link--placeholder {
+  pointer-events: none;
+}
+
+/* On narrow screens the three columns get cramped, so stack: prev/next share
+   the top row and the copyright centers on a row beneath them. */
+@media (max-width: 44.9375em) {
+  .md-footer__inner.md-footer__inner--meta {
+    grid-template-columns: 1fr 1fr;
+  }
+  .md-footer__inner--meta .md-footer__link--prev {
+    grid-row: 1;
+  }
+  .md-footer__inner--meta .md-footer__link--next {
+    grid-row: 1;
+  }
+  .md-footer__inner--meta .md-footer__meta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
 [dir=ltr] .md-typeset .md-input,
 [dir=rtl] .md-typeset .md-input {
   border-radius: 0.4rem;

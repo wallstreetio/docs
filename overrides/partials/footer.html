@@ -1,0 +1,61 @@
+{#-
+  Override of the stock theme footer. Instead of stacking the copyright in a
+  separate meta strip *below* the prev/next nav, we drop it into the center of
+  the nav row: previous-link on the left, copyright centered, next-link on the
+  right. A 3-column grid (1fr auto 1fr, see extra.css) keeps the copyright
+  optically centered regardless of the prev/next label widths, and empty
+  placeholders preserve centering when a page has no previous or next page.
+-#}
+<footer class="md-footer">
+  {% if page.meta and page.meta.hide %}
+    {% set hidden = "hidden" if "footer" in page.meta.hide %}
+  {% endif %}
+  <nav class="md-footer__inner md-grid md-footer__inner--meta" aria-label="{{ lang.t('footer') }}" {{ hidden }}>
+    {% if "navigation.footer" in features and page.previous_page %}
+      {% set direction = lang.t("footer.previous") %}
+      <a href="{{ page.previous_page.url | url }}" class="md-footer__link md-footer__link--prev" aria-label="{{ direction }}: {{ page.previous_page.title | e }}">
+        <div class="md-footer__button md-icon">
+          {% set icon = config.theme.icon.previous or "material/arrow-left" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </div>
+        <div class="md-footer__title">
+          <span class="md-footer__direction">
+            {{ direction }}
+          </span>
+          <div class="md-ellipsis">
+            {{ page.previous_page.title }}
+          </div>
+        </div>
+      </a>
+    {% else %}
+      <div class="md-footer__link md-footer__link--prev md-footer__link--placeholder"></div>
+    {% endif %}
+
+    <div class="md-footer__meta md-typeset">
+      {% include "partials/copyright.html" %}
+      {% if config.extra.social %}
+        {% include "partials/social.html" %}
+      {% endif %}
+    </div>
+
+    {% if "navigation.footer" in features and page.next_page %}
+      {% set direction = lang.t("footer.next") %}
+      <a href="{{ page.next_page.url | url }}" class="md-footer__link md-footer__link--next" aria-label="{{ direction }}: {{ page.next_page.title | e }}">
+        <div class="md-footer__title">
+          <span class="md-footer__direction">
+            {{ direction }}
+          </span>
+          <div class="md-ellipsis">
+            {{ page.next_page.title }}
+          </div>
+        </div>
+        <div class="md-footer__button md-icon">
+          {% set icon = config.theme.icon.next or "material/arrow-right" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </div>
+      </a>
+    {% else %}
+      <div class="md-footer__link md-footer__link--next md-footer__link--placeholder"></div>
+    {% endif %}
+  </nav>
+</footer>
