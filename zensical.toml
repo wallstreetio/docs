@@ -27,7 +27,7 @@ site_author = "Aaron Lamar"
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
-#site_url = "https://www.example.com/"
+site_url = "https://docs.wallstreet.io/"
 watch = ["macros.py"]
 
 # The copyright notice appears in the page footer and can contain an HTML
@@ -118,6 +118,7 @@ extra_css = ["assets/stylesheets/extra.css", "assets/stylesheets/hero.css"]
 #
 # Read more: https://zensical.org/docs/customization/#additional-javascript
 extra_javascript = [
+    "assets/javascript/posthog-docs.js",
     "assets/javascript/feedback-form.js",
     { path = "assets/javascript/hero-loader.js", type = "module" },
 ]
